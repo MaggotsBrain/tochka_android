@@ -1,4 +1,24 @@
 <resources>
-    <string name="app_name">tochka_test</string>
-    <string name="title_activity_maps">TOCHKA</string>
+
+    <!--General-->
+    <string name="app_name">ТОЧКА</string>
+    <string name="title_activity_maps">ТОЧКА</string>
+
+    <!--Login Screen-->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">e-mail</string>
+    <string name="prompt_password">•••••••</string>
+    <string name="confirm_password">•••••••</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!--GoogleMaps Utils-->
+    <string name="provider_gps">GPS</string>
+    <string name="provider_network">Network</string>
+    <string name="location_settings">Location settings</string>
+
 </resources>
