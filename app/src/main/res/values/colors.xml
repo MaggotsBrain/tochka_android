@@ -5,7 +5,10 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhiteBack">#E5E5E5</color>
     <color name="loginHint">#60F6F6F6</color>
+    <color name="god_button_shadow">#40F6F6F6</color>
     <color name="transparency">#00F6F6F6</color>
+    <color name="searchHint">#60939393</color>
+
 
 
 </resources>

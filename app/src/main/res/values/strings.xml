@@ -21,4 +21,7 @@
     <string name="provider_network">Network</string>
     <string name="location_settings">Location settings</string>
 
+    <!--Main map screen-->
+    <string name="main_search">Поиск</string>
+
 </resources>
