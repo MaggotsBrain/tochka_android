@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPrimary">#E5E5E5</color>
+    <color name="colorPrimaryDark">#E5E5E5</color>
+    <color name="colorAccent">#E5E5E5</color>
     <color name="colorWhiteBack">#E5E5E5</color>
+    <color name="colorProfileWhiteBack">#F5F5F5</color>
+
+    <color name="transparency">#00000000</color>
+
     <color name="loginHint">#60F6F6F6</color>
-    <color name="god_button_shadow">#40F6F6F6</color>
-    <color name="transparency">#00F6F6F6</color>
-    <color name="searchHint">#60939393</color>
+
+    <color name="god_button_shadow">#30F6F6F6</color>
+    <color name="searchHint">#70939393</color>
+    <color name="profile_username">#6A6A6A</color>
+    <color name="god_button_digit">#939393</color>
+    <color name="god_button_symbol">#E9501C</color>
+
+
+
+
 
 
 
