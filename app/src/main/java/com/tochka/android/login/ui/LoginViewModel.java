@@ -1,4 +1,4 @@
-package com.tochka.testmap.ui.login;
+package com.tochka.android.login.ui;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.tochka.testmap.data.LoginRepository;
-import com.tochka.testmap.data.Result;
-import com.tochka.testmap.data.model.LoggedInUser;
-import com.tochka.testmap.R;
+import com.tochka.android.login.data.LoginRepository;
+import com.tochka.android.login.data.Result;
+import com.tochka.android.login.data.model.LoggedInUser;
+import com.tochka.android.R;
 
 public class LoginViewModel extends ViewModel {
 

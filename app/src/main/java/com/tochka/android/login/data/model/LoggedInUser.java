@@ -1,4 +1,4 @@
-package com.tochka.testmap.data.model;
+package com.tochka.android.login.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

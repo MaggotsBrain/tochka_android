@@ -1,11 +1,11 @@
-package com.tochka.testmap;
+package com.tochka.android.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.tochka.testmap.ui.login.LoginActivity;
+import com.tochka.android.login.ui.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
-package com.tochka.testmap.data;
+package com.tochka.android.login.data;
 
-import com.tochka.testmap.data.model.LoggedInUser;
+import com.tochka.android.login.data.model.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and

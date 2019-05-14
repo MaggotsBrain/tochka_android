@@ -1,4 +1,4 @@
-package com.tochka.testmap.ui.login;
+package com.tochka.android.login.ui;
 
 import android.app.Activity;
 
@@ -22,8 +22,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tochka.testmap.MapsActivity;
-import com.tochka.testmap.R;
+import com.tochka.android.main.MapsActivity;
+import com.tochka.android.R;
 
 public class LoginActivity extends AppCompatActivity {
 

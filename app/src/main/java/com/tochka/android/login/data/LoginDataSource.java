@@ -1,6 +1,6 @@
-package com.tochka.testmap.data;
+package com.tochka.android.login.data;
 
-import com.tochka.testmap.data.model.LoggedInUser;
+import com.tochka.android.login.data.model.LoggedInUser;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package com.tochka.testmap.ui.login;
+package com.tochka.android.login.ui;
 
 /**
  * Class exposing authenticated user details to the UI.

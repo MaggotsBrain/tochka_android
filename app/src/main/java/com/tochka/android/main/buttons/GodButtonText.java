@@ -1,15 +1,21 @@
-package com.tochka.testmap;
+package com.tochka.android.main.buttons;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Typeface;
 import android.view.View;
+
+import com.tochka.android.R;
+import com.tochka.android.main.MapsActivity;
 
 public class GodButtonText extends View {
 
     Paint p;
     Path path;
+
+    Typeface typeface;
 
     String degree_n;
     String minutes_n;
@@ -23,11 +29,12 @@ public class GodButtonText extends View {
     String degree_symbol = "°";
     String minutes_symbol = "′";
     String second_symbol = "″";
-    String longtitude_symbol = "E";
+    String longitude_symbol = "E";
     String latitude_symbol = "N";
 
-    public GodButtonText(Context context) {
+    public GodButtonText(Context context, Typeface typeface) {
         super(context);
+        this.typeface = typeface;
         p = new Paint(Paint.ANTI_ALIAS_FLAG);
         p.setStrokeWidth(2);
         p.setTextSize(70);
@@ -62,14 +69,14 @@ public class GodButtonText extends View {
         if (seconds_n.length() < 2)
             seconds_n = "0" + seconds_n;
 
-        String[] longs = MapsActivity.longtitude.split(":");
+        String[] longs = MapsActivity.longitude.split(":");
         if (longs[0].contains("-")) {
-            longtitude_symbol = "W";
+            longitude_symbol = "W";
             degree_e = longs[0].replace("-", "");
             if (degree_e.length() < 2)
                 degree_e = "0" + degree_e;
         } else {
-            longtitude_symbol = "E";
+            longitude_symbol = "E";
             degree_e = longs[0];
             if (degree_e.length() < 2)
                 degree_e = "0" + degree_e;
@@ -86,53 +93,57 @@ public class GodButtonText extends View {
 
         int voff = -20;
 
-        p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(degree_e, path, 620, voff, p);
+        p.setTypeface(Typeface.DEFAULT_BOLD);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(degree_symbol, path, 699, voff, p);
-
-        p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(minutes_e, path, 5, voff, p);
+        canvas.drawTextOnPath(vertical_line, path, 265, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(minutes_symbol, path, 83, voff, p);
+        canvas.drawTextOnPath(vertical_line, path, 625, voff, p);
+
+        p.setTextSize(60);
+        p.setTypeface(typeface);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(seconds_e, path, 95, voff, p);
+        canvas.drawTextOnPath(degree_e, path, 655, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(second_symbol, path, 170, voff, p);
+        canvas.drawTextOnPath(degree_symbol, path, 0, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(longtitude_symbol, path, 193, voff, p);
+        canvas.drawTextOnPath(minutes_e, path, 30, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(vertical_line, path, 240, voff, p);
+        canvas.drawTextOnPath(minutes_symbol, path, 95, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(degree_n, path, 265, voff, p);
+        canvas.drawTextOnPath(seconds_e, path, 120, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(degree_symbol, path, 342, voff, p);
+        canvas.drawTextOnPath(second_symbol, path, 190, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(minutes_n, path, 361, voff, p);
-
-        p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(minutes_symbol, path, 438, voff, p);
+        canvas.drawTextOnPath(longitude_symbol, path, 220, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(seconds_n, path, 447, voff, p);
+        canvas.drawTextOnPath(degree_n, path, 285, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(second_symbol, path, 522, voff, p);
+        canvas.drawTextOnPath(degree_symbol, path, 352, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(latitude_symbol, path, 542, voff, p);
+        canvas.drawTextOnPath(minutes_n, path, 379, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
-        canvas.drawTextOnPath(vertical_line, path, 600, voff, p);
+        canvas.drawTextOnPath(minutes_symbol, path, 451, voff, p);
 
+        p.setColor(getResources().getColor(R.color.god_button_digit));
+        canvas.drawTextOnPath(seconds_n, path, 476, voff, p);
+
+        p.setColor(getResources().getColor(R.color.god_button_symbol));
+        canvas.drawTextOnPath(second_symbol, path, 546, voff, p);
+
+        p.setColor(getResources().getColor(R.color.god_button_digit));
+        canvas.drawTextOnPath(latitude_symbol, path, 579, voff, p);
     }
 }
