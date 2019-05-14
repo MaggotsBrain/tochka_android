@@ -1,4 +1,4 @@
-package com.tochka.android.login.ui;
+package social.tochka.android.login.ui;
 
 /**
  * Class exposing authenticated user details to the UI.

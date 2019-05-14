@@ -1,4 +1,4 @@
-package com.tochka.android.main.buttons;
+package social.tochka.android.main.buttons;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,8 +7,8 @@ import android.graphics.Path;
 import android.graphics.Typeface;
 import android.view.View;
 
-import com.tochka.android.R;
-import com.tochka.android.main.MapsActivity;
+import social.tochka.android.R;
+import social.tochka.android.main.MapsActivity;
 
 public class GodButtonText extends View {
 

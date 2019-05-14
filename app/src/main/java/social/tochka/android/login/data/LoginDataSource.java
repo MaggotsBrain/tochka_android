@@ -1,6 +1,6 @@
-package com.tochka.android.login.data;
+package social.tochka.android.login.data;
 
-import com.tochka.android.login.data.model.LoggedInUser;
+import social.tochka.android.login.data.model.LoggedInUser;
 
 import java.io.IOException;
 

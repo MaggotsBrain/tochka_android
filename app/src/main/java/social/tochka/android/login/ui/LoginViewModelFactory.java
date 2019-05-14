@@ -1,11 +1,11 @@
-package com.tochka.android.login.ui;
+package social.tochka.android.login.ui;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.tochka.android.login.data.LoginDataSource;
-import com.tochka.android.login.data.LoginRepository;
+import social.tochka.android.login.data.LoginDataSource;
+import social.tochka.android.login.data.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

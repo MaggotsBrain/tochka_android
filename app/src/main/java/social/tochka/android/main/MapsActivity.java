@@ -1,4 +1,4 @@
-package com.tochka.android.main;
+package social.tochka.android.main;
 
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
-import android.graphics.drawable.TransitionDrawable;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,8 +19,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.tochka.android.R;
-import com.tochka.android.main.buttons.GodButtonText;
+import social.tochka.android.R;
+import social.tochka.android.main.buttons.GodButtonText;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnCameraMoveListener {
 

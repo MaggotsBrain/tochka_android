@@ -1,11 +1,11 @@
-package com.tochka.android.splash;
+package social.tochka.android.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.tochka.android.login.ui.LoginActivity;
+import social.tochka.android.login.ui.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

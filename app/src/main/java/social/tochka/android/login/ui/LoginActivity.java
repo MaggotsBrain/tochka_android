@@ -1,4 +1,4 @@
-package com.tochka.android.login.ui;
+package social.tochka.android.login.ui;
 
 import android.app.Activity;
 
@@ -22,8 +22,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tochka.android.main.MapsActivity;
-import com.tochka.android.R;
+import social.tochka.android.main.MapsActivity;
+import social.tochka.android.R;
 
 public class LoginActivity extends AppCompatActivity {
 
