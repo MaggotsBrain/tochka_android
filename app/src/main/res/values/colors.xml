@@ -2,15 +2,18 @@
 <resources>
 
     <!--Common-->
-    <color name="colorPrimary">#E5E5E5</color>
-    <color name="colorPrimaryDark">#E5E5E5</color>
-    <color name="colorAccent">#E5E5E5</color>
-    <color name="colorWhiteBack">#E5E5E5</color>
-    <color name="colorProfileWhiteBack">#F5F5F5</color>
+    <color name="colorPrimary">#F6F6F6</color>
+    <color name="colorPrimaryDark">#F6F6F6</color>
+    <color name="colorAccent">#F6F6F6</color>
+    <color name="colorWhiteBack">#F6F6F6</color>
+    <color name="colorProfileWhiteBack">#F6F6F6</color>
+
     <color name="transparency">#00000000</color>
 
     <!--Login-->
-    <color name="loginHint">#60F6F6F6</color>
+    <color name="loginHint">#8A8A8A</color>
+    <color name="loginText">#4CB5AB</color>
+    <color name="buttonHint">#BDBDBD</color>
 
     <!--Main-->
     <color name="god_button_shadow">#30F6F6F6</color>

@@ -4,12 +4,15 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import com.google.android.gms.maps.GoogleMap;
@@ -19,10 +22,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnCameraMoveListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -49,6 +53,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         addContentView(godButtonText, new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
 
+        final EditText passwordEditText = findViewById(R.id.search);
+        passwordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
     }
 
 
@@ -140,15 +153,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (profileVisible) {
             findViewById(R.id.profile_layout).setVisibility(View.INVISIBLE);
+            findViewById(R.id.profile_layout).setClickable(false);
+            findViewById(R.id.god_button).setClickable(true);
             profileVisible = false;
         } else {
             profileVisible = true;
             findViewById(R.id.profile_layout).setVisibility(View.VISIBLE);
+            findViewById(R.id.profile_layout).setClickable(true);
+            findViewById(R.id.god_button).setClickable(true);
         }
     }
 
-    @Override
-    public void onCameraMove() {
-
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+
+//    @Override
+//    public void onCameraMove() {
+//
+//    }
 }
