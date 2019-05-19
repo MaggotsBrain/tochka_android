@@ -18,7 +18,7 @@
     <string name="next_button">ДАЛЕЕ</string>
 
     <!--Current Session-->
-    <string name="username">Пустоверть</string>
+    <string name="username">Самая пустая</string>
 
     <!--GoogleMaps Utils-->
     <string name="provider_gps">GPS</string>
@@ -27,5 +27,11 @@
 
     <!--Main map screen-->
     <string name="main_search">Поиск</string>
+    <string name="card_latitude">55°43\'42\'\'N</string>
+    <string name="card_longitude">37°38\'08\'\'E</string>
+    <string name="story">Ахуительная история о том, как две самовлюбленных личности поняли, что как-то необходимо доказать свою илитарность. Для этого им приходитя каждый вечер покупать поднимающие дух напитки и творить!</string>
+
+
+
 
 </resources>

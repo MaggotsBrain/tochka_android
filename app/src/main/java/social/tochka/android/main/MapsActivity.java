@@ -32,6 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private boolean godButtonClick;
     private boolean profileVisible;
+    private boolean godTextWasVisible;
     private GodButtonText godButtonText;
     public static String latitude = "-16:42:45,02561";
     public static String longitude = "49:13:53,22818";
@@ -41,6 +42,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         Typeface tf = ResourcesCompat.getFont(getApplicationContext(), R.font.overpass_mono_bold);
         godButtonClick = false;
+        godTextWasVisible = false;
         godButtonText = new GodButtonText(this, tf);
         godButtonText.setVisibility(View.INVISIBLE);
         super.onCreate(savedInstanceState);
@@ -112,39 +114,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (godButtonClick) {
             findViewById(R.id.tochka_image).setVisibility(View.INVISIBLE);
-//            findViewById(R.id.god_button).setBackground(getResources().getDrawable(R.drawable.god_button));
-
-//            Animation anim = new RotateAnimation(0.0f, 180.0f,
-//                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
-//                    0.5f);
-//            anim.setRepeatCount(0);
-//            anim.setDuration(1000);
-//            findViewById(R.id.god_button).startAnimation(anim);
-//            TransitionDrawable transition = (TransitionDrawable) findViewById(R.id.god_button).getBackground();
-//            transition.reverseTransition(300);
-
-            LatLng target = mMap.getCameraPosition().target;
             mMap.addMarker(new MarkerOptions()
                     .position(mMap.getCameraPosition().target)
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
-                    .title("Latitude: " + Location.convert(target.latitude, Location.FORMAT_SECONDS)
-                            + "\n" + "Longitude: " + Location.convert(target.longitude, Location.FORMAT_SECONDS)));
+                    .title("И даже тут я пил пиво."));
             godButtonClick = false;
             godButtonText.setVisibility(View.INVISIBLE);
 
         } else {
             godButtonClick = true;
-//            Animation anim = AnimationUtils.loadAnimation(this, R.anim.godbutton_anim);
-//            Animation anim = new RotateAnimation(0.0f, 180.0f,
-//                    Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
-//                    0.5f);
-//            anim.setRepeatCount(0);
-//            anim.setDuration(1000);
-//            findViewById(R.id.god_button).startAnimation(anim);
-//            TransitionDrawable transition = (TransitionDrawable) findViewById(R.id.god_button).getBackground();
-//            transition.startTransition(300);
             findViewById(R.id.tochka_image).setVisibility(View.VISIBLE);
-//            findViewById(R.id.god_button).setBackground(getResources().getDrawable(R.drawable.god_button_inverse));
             godButtonText.setVisibility(View.VISIBLE);
         }
     }
@@ -156,11 +135,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             findViewById(R.id.profile_layout).setClickable(false);
             findViewById(R.id.god_button).setClickable(true);
             profileVisible = false;
+            if (godTextWasVisible) {
+                godButtonText.setVisibility(View.VISIBLE);
+                godTextWasVisible = false;
+            }
         } else {
             profileVisible = true;
             findViewById(R.id.profile_layout).setVisibility(View.VISIBLE);
             findViewById(R.id.profile_layout).setClickable(true);
-            findViewById(R.id.god_button).setClickable(true);
+            findViewById(R.id.god_button).setClickable(false);
+            if (godButtonText.getVisibility() == View.VISIBLE) {
+                godButtonText.setVisibility(View.INVISIBLE);
+                godTextWasVisible = true;
+            }
         }
     }
 

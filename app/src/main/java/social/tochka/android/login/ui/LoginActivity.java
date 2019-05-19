@@ -201,7 +201,6 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUiWithUser(LoggedInUserView model) {
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
-        // TODO : initiate successful logged in experience
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
