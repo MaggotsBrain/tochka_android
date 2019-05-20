@@ -27,11 +27,18 @@
 
     <!--Main map screen-->
     <string name="main_search">Поиск</string>
-    <string name="card_latitude">55°43\'42\'\'N</string>
-    <string name="card_longitude">37°38\'08\'\'E</string>
+    <string name="card_latitude_degree">55</string>
+    <string name="card_latitude_minutes">43</string>
+    <string name="card_latitude_seconds">42</string>
+    <string name="card_longitude_degree">23</string>
+    <string name="card_longitude_minutes">12</string>
+    <string name="card_longitude_seconds">47</string>
+    <string name="card_degrees_symbol">°</string>
+    <string name="card_minutes_symbol">\'</string>
+    <string name="card_seconds_symbol">\'\'</string>
+    <string name="card_latitude_symbol">N</string>
+    <string name="card_longitude_symbol">E</string>
     <string name="story">Ахуительная история о том, как две самовлюбленных личности поняли, что как-то необходимо доказать свою илитарность. Для этого им приходитя каждый вечер покупать поднимающие дух напитки и творить!</string>
-
-
 
 
 </resources>

@@ -2,6 +2,8 @@ package social.tochka.android.main;
 
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.app.Activity;
@@ -23,8 +25,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
+import social.tochka.android.main.cards.RVAdapter;
+import social.tochka.android.main.cards.TochkaCard;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -34,9 +41,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean profileVisible;
     private boolean godTextWasVisible;
     private GodButtonText godButtonText;
-    public static String latitude = "-16:42:45,02561";
-    public static String longitude = "49:13:53,22818";
+    public static String latitude;
+    public static String longitude;
 
+    private List<TochkaCard> cards;
+    private RecyclerView rv;
+
+    private String degree_latitude;
+    private String minutes_latitude;
+    private String seconds_latitude;
+    private String degree_longitude;
+    private String minutes_longitude;
+    private String seconds_longitude;
+    private String longitude_symbol = "E";
+    private String latitude_symbol = "N";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +82,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
+
+        rv = (RecyclerView) findViewById(R.id.rv);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rv.setLayoutManager(llm);
+        initializeData();
+        initializeAdapter();
     }
 
 
@@ -114,10 +138,69 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         if (godButtonClick) {
             findViewById(R.id.tochka_image).setVisibility(View.INVISIBLE);
+
+            LatLng target = mMap.getCameraPosition().target;
+            latitude = Location.convert(target.latitude, Location.FORMAT_SECONDS);
+            longitude = Location.convert(target.longitude, Location.FORMAT_SECONDS);
+
+            String[] lats = MapsActivity.latitude.split(":");
+
+            if (lats[0].contains("-")) {
+                latitude_symbol = "S";
+                degree_latitude = lats[0].replace("-", "");
+                if (degree_latitude.length() < 2)
+                    degree_latitude = "0" + degree_latitude;
+            } else {
+                latitude_symbol = "N";
+                degree_latitude = lats[0];
+                if (degree_latitude.length() < 2)
+                    degree_latitude = "0" + degree_latitude;
+            }
+            minutes_latitude = lats[1];
+            if (minutes_latitude.length() < 2)
+                minutes_latitude = "0" + minutes_latitude;
+            seconds_latitude = lats[2].split(",")[0];
+            if (seconds_latitude.length() < 2)
+                seconds_latitude = "0" + seconds_latitude;
+
+            String[] longs = MapsActivity.longitude.split(":");
+            if (longs[0].contains("-")) {
+                longitude_symbol = "W";
+                degree_longitude = longs[0].replace("-", "");
+                if (degree_longitude.length() < 2)
+                    degree_longitude = "0" + degree_longitude;
+            } else {
+                longitude_symbol = "E";
+                degree_longitude = longs[0];
+                if (degree_longitude.length() < 2)
+                    degree_longitude = "0" + degree_longitude;
+            }
+            minutes_longitude = longs[1];
+            if (minutes_longitude.length() < 2)
+                minutes_longitude = "0" + minutes_longitude;
+            seconds_longitude = longs[2].split(",")[0];
+            if (seconds_longitude.length() < 2)
+                seconds_longitude = "0" + seconds_longitude;
+
+            cards.add(TochkaCard.builder()
+                    .latitudeDegree(degree_latitude)
+                    .latitudeMinutes(minutes_latitude)
+                    .latitudeSeconds(seconds_latitude)
+                    .latitudeSymbol(latitude_symbol)
+                    .longitudeDegree(degree_longitude)
+                    .longitudeMinutes(minutes_longitude)
+                    .longitudeSeconds(seconds_longitude)
+                    .longitudeSymbol(longitude_symbol)
+                    .text("Щас бы...в кроватку..")
+                    .build());
+
             mMap.addMarker(new MarkerOptions()
-                    .position(mMap.getCameraPosition().target)
+                    .position(target)
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
-                    .title("И даже тут я пил пиво."));
+                    .title("Щас бы...в кроватку.."));
+
+            rv.getAdapter().notifyDataSetChanged();
+            
             godButtonClick = false;
             godButtonText.setVisibility(View.INVISIBLE);
 
@@ -156,8 +239,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-//    @Override
-//    public void onCameraMove() {
-//
-//    }
+    private void initializeData() {
+
+        cards = new ArrayList<>();
+        cards.add(TochkaCard.builder()
+                .latitudeDegree("55")
+                .latitudeMinutes("23")
+                .latitudeSeconds("25")
+                .latitudeSymbol("N")
+                .longitudeDegree("25")
+                .longitudeMinutes("47")
+                .longitudeSeconds("38")
+                .longitudeSymbol("E")
+                .text("Ахуительная история о том, как две самовлюбленных личности поняли, что как-то необходимо доказать свою илитарность. Для этого им приходитя каждый вечер покупать поднимающие дух напитки и творить!")
+                .build());
+    }
+
+
+    private void initializeAdapter() {
+
+        RVAdapter adapter = new RVAdapter(cards);
+        rv.setAdapter(adapter);
+
+    }
 }

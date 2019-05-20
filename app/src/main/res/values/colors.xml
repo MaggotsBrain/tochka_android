@@ -21,8 +21,9 @@
     <color name="profile_username">#2E2E2E</color>
     <color name="god_button_digit">#3C3F41</color>
     <color name="god_button_symbol">#E9501C</color>
-
-
+    <color name="profile_card_digit">#4CB5AB</color>
+    <color name="profile_card_symbol">#E9501C</color>
+    <color name="profile_card_story">#666666</color>
 
 
 </resources>

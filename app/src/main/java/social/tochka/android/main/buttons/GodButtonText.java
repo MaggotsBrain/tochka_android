@@ -17,13 +17,13 @@ public class GodButtonText extends View {
 
     Typeface typeface;
 
-    String degree_n;
-    String minutes_n;
-    String seconds_n;
+    String degree_latitude;
+    String minutes_latitude;
+    String seconds_latitude;
 
-    String degree_e;
-    String minutes_e;
-    String seconds_e;
+    String degree_longitude;
+    String minutes_longitude;
+    String seconds_longitude;
 
     String vertical_line = "|";
     String degree_symbol = "°";
@@ -53,40 +53,40 @@ public class GodButtonText extends View {
 
         if (lats[0].contains("-")) {
             latitude_symbol = "S";
-            degree_n = lats[0].replace("-", "");
-            if (degree_n.length() < 2)
-                degree_n = "0" + degree_n;
+            degree_latitude = lats[0].replace("-", "");
+            if (degree_latitude.length() < 2)
+                degree_latitude = "0" + degree_latitude;
         } else {
             latitude_symbol = "N";
-            degree_n = lats[0];
-            if (degree_n.length() < 2)
-                degree_n = "0" + degree_n;
+            degree_latitude = lats[0];
+            if (degree_latitude.length() < 2)
+                degree_latitude = "0" + degree_latitude;
         }
-        minutes_n = lats[1];
-        if (minutes_n.length() < 2)
-            minutes_n = "0" + minutes_n;
-        seconds_n = lats[2].split(",")[0];
-        if (seconds_n.length() < 2)
-            seconds_n = "0" + seconds_n;
+        minutes_latitude = lats[1];
+        if (minutes_latitude.length() < 2)
+            minutes_latitude = "0" + minutes_latitude;
+        seconds_latitude = lats[2].split(",")[0];
+        if (seconds_latitude.length() < 2)
+            seconds_latitude = "0" + seconds_latitude;
 
         String[] longs = MapsActivity.longitude.split(":");
         if (longs[0].contains("-")) {
             longitude_symbol = "W";
-            degree_e = longs[0].replace("-", "");
-            if (degree_e.length() < 2)
-                degree_e = "0" + degree_e;
+            degree_longitude = longs[0].replace("-", "");
+            if (degree_longitude.length() < 2)
+                degree_longitude = "0" + degree_longitude;
         } else {
             longitude_symbol = "E";
-            degree_e = longs[0];
-            if (degree_e.length() < 2)
-                degree_e = "0" + degree_e;
+            degree_longitude = longs[0];
+            if (degree_longitude.length() < 2)
+                degree_longitude = "0" + degree_longitude;
         }
-        minutes_e = longs[1];
-        if (minutes_e.length() < 2)
-            minutes_e = "0" + minutes_e;
-        seconds_e = longs[2].split(",")[0];
-        if (seconds_e.length() < 2)
-            seconds_e = "0" + seconds_e;
+        minutes_longitude = longs[1];
+        if (minutes_longitude.length() < 2)
+            minutes_longitude = "0" + minutes_longitude;
+        seconds_longitude = longs[2].split(",")[0];
+        if (seconds_longitude.length() < 2)
+            seconds_longitude = "0" + seconds_longitude;
 
         path.reset();
         path.addCircle(539, 1492, 115, Path.Direction.CW);
@@ -105,19 +105,19 @@ public class GodButtonText extends View {
         p.setTypeface(typeface);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(degree_e, path, 655, voff, p);
+        canvas.drawTextOnPath(degree_longitude, path, 655, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(degree_symbol, path, 0, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(minutes_e, path, 30, voff, p);
+        canvas.drawTextOnPath(minutes_longitude, path, 30, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(minutes_symbol, path, 95, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(seconds_e, path, 120, voff, p);
+        canvas.drawTextOnPath(seconds_longitude, path, 120, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(second_symbol, path, 190, voff, p);
@@ -126,19 +126,19 @@ public class GodButtonText extends View {
         canvas.drawTextOnPath(longitude_symbol, path, 220, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(degree_n, path, 285, voff, p);
+        canvas.drawTextOnPath(degree_latitude, path, 285, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(degree_symbol, path, 352, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(minutes_n, path, 379, voff, p);
+        canvas.drawTextOnPath(minutes_latitude, path, 379, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(minutes_symbol, path, 451, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_digit));
-        canvas.drawTextOnPath(seconds_n, path, 476, voff, p);
+        canvas.drawTextOnPath(seconds_latitude, path, 476, voff, p);
 
         p.setColor(getResources().getColor(R.color.god_button_symbol));
         canvas.drawTextOnPath(second_symbol, path, 546, voff, p);
