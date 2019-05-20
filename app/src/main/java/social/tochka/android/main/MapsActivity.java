@@ -5,17 +5,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -27,11 +25,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
 import social.tochka.android.main.cards.RVAdapter;
 import social.tochka.android.main.cards.TochkaCard;
+import social.tochka.android.main.util.CoordinatesConverter;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -41,20 +42,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private boolean profileVisible;
     private boolean godTextWasVisible;
     private GodButtonText godButtonText;
-    public static String latitude;
-    public static String longitude;
+    private EditText storyText;
 
     private List<TochkaCard> cards;
     private RecyclerView rv;
 
-    private String degree_latitude;
-    private String minutes_latitude;
-    private String seconds_latitude;
-    private String degree_longitude;
-    private String minutes_longitude;
-    private String seconds_longitude;
-    private String longitude_symbol = "E";
-    private String latitude_symbol = "N";
+    public static String latitude = "-16:42:45,02561";
+    public static String longitude = "49:13:53,22818";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +64,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
         addContentView(godButtonText, new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
 
         final EditText passwordEditText = findViewById(R.id.search);
+        storyText = findViewById(R.id.add_story);
+        storyText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
         passwordEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -83,7 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        rv = (RecyclerView) findViewById(R.id.rv);
+        rv = findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
         initializeData();
@@ -106,7 +110,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 MapStyleOptions.loadRawResourceStyle(
                         this, R.raw.map_style));
         mMap = googleMap;
-
         mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
@@ -117,102 +120,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-
-        // Add a marker in Sydney and move the camera
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    Activity#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for Activity#requestPermissions for more details.
-                return;
-            }
-        }
-        mMap.setMyLocationEnabled(true);
     }
 
     public void onClickGodButton(View view) {
-
         if (godButtonClick) {
             findViewById(R.id.tochka_image).setVisibility(View.INVISIBLE);
-
-            LatLng target = mMap.getCameraPosition().target;
-            latitude = Location.convert(target.latitude, Location.FORMAT_SECONDS);
-            longitude = Location.convert(target.longitude, Location.FORMAT_SECONDS);
-
-            String[] lats = MapsActivity.latitude.split(":");
-
-            if (lats[0].contains("-")) {
-                latitude_symbol = "S";
-                degree_latitude = lats[0].replace("-", "");
-                if (degree_latitude.length() < 2)
-                    degree_latitude = "0" + degree_latitude;
-            } else {
-                latitude_symbol = "N";
-                degree_latitude = lats[0];
-                if (degree_latitude.length() < 2)
-                    degree_latitude = "0" + degree_latitude;
-            }
-            minutes_latitude = lats[1];
-            if (minutes_latitude.length() < 2)
-                minutes_latitude = "0" + minutes_latitude;
-            seconds_latitude = lats[2].split(",")[0];
-            if (seconds_latitude.length() < 2)
-                seconds_latitude = "0" + seconds_latitude;
-
-            String[] longs = MapsActivity.longitude.split(":");
-            if (longs[0].contains("-")) {
-                longitude_symbol = "W";
-                degree_longitude = longs[0].replace("-", "");
-                if (degree_longitude.length() < 2)
-                    degree_longitude = "0" + degree_longitude;
-            } else {
-                longitude_symbol = "E";
-                degree_longitude = longs[0];
-                if (degree_longitude.length() < 2)
-                    degree_longitude = "0" + degree_longitude;
-            }
-            minutes_longitude = longs[1];
-            if (minutes_longitude.length() < 2)
-                minutes_longitude = "0" + minutes_longitude;
-            seconds_longitude = longs[2].split(",")[0];
-            if (seconds_longitude.length() < 2)
-                seconds_longitude = "0" + seconds_longitude;
-
-            cards.add(TochkaCard.builder()
-                    .latitudeDegree(degree_latitude)
-                    .latitudeMinutes(minutes_latitude)
-                    .latitudeSeconds(seconds_latitude)
-                    .latitudeSymbol(latitude_symbol)
-                    .longitudeDegree(degree_longitude)
-                    .longitudeMinutes(minutes_longitude)
-                    .longitudeSeconds(seconds_longitude)
-                    .longitudeSymbol(longitude_symbol)
-                    .text("Щас бы...в кроватку..")
-                    .build());
-
-            mMap.addMarker(new MarkerOptions()
-                    .position(target)
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
-                    .title("Щас бы...в кроватку.."));
-
-            rv.getAdapter().notifyDataSetChanged();
-            
-            godButtonClick = false;
+            findViewById(R.id.add_window).setVisibility(View.VISIBLE);
             godButtonText.setVisibility(View.INVISIBLE);
-
+            godButtonClick = false;
         } else {
-            godButtonClick = true;
             findViewById(R.id.tochka_image).setVisibility(View.VISIBLE);
             godButtonText.setVisibility(View.VISIBLE);
+            godButtonClick = true;
         }
     }
 
     public void onClickProfileButton(View view) {
-
         if (profileVisible) {
             findViewById(R.id.profile_layout).setVisibility(View.INVISIBLE);
             findViewById(R.id.profile_layout).setClickable(false);
@@ -234,32 +157,80 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    public void onClickAddCancel(View view) {
+        storyText.getText().clear();
+        findViewById(R.id.tochka_image).setVisibility(View.INVISIBLE);
+        findViewById(R.id.add_window).setVisibility(View.INVISIBLE);
+        godButtonText.setVisibility(View.INVISIBLE);
+        godButtonClick = false;
+        view.clearFocus();
+    }
+
+    public void onClickAddLock(View view) {
+    }
+
+    public void onClickAddApprove(View view) {
+        LatLng target = mMap.getCameraPosition().target;
+        latitude = Location.convert(target.latitude, Location.FORMAT_SECONDS);
+        longitude = Location.convert(target.longitude, Location.FORMAT_SECONDS);
+        Map<String, String> coordinates = CoordinatesConverter.toMap(latitude, longitude);
+
+        cards.add(TochkaCard.builder()
+                .latitudeDegree(coordinates.get("degree_latitude"))
+                .latitudeMinutes(coordinates.get("minutes_latitude"))
+                .latitudeSeconds(coordinates.get("seconds_latitude"))
+                .latitudeSymbol(coordinates.get("latitude_symbol"))
+                .longitudeDegree(coordinates.get("degree_longitude"))
+                .longitudeMinutes(coordinates.get("minutes_longitude"))
+                .longitudeSeconds(coordinates.get("seconds_longitude"))
+                .longitudeSymbol(coordinates.get("longitude_symbol"))
+                .text(storyText.getText().toString())
+                .build());
+
+        TextView latitude_degree_digit = findViewById(R.id.add_latitude_degree_digit);
+        latitude_degree_digit.setText(coordinates.get("degree_latitude"));
+        TextView latitude_minute_digit = findViewById(R.id.add_latitude_minute_digit);
+        latitude_minute_digit.setText(coordinates.get("minutes_latitude"));
+        TextView latitude_seconds_digit = findViewById(R.id.add_latitude_seconds_digit);
+        latitude_seconds_digit.setText(coordinates.get("seconds_latitude"));
+        TextView latitude_symbol = findViewById(R.id.add_latitude_symbol);
+        latitude_symbol.setText(coordinates.get("latitude_symbol"));
+
+        TextView longitude_degree_digit = findViewById(R.id.add_longitude_degree_digit);
+        longitude_degree_digit.setText(coordinates.get("degree_longitude"));
+        TextView longitude_minute_digit = findViewById(R.id.add_longitude_minute_digit);
+        longitude_minute_digit.setText(coordinates.get("minutes_longitude"));
+        TextView longitude_seconds_digit = findViewById(R.id.add_longitude_seconds_digit);
+        longitude_seconds_digit.setText(coordinates.get("seconds_longitude"));
+        TextView longitude_symbol = findViewById(R.id.add_longitude_symbol);
+        longitude_symbol.setText(coordinates.get("longitude_symbol"));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(target)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
+                .title(storyText.getText().toString()));
+
+        storyText.getText().clear();
+        findViewById(R.id.add_window).setVisibility(View.INVISIBLE);
+
+        Objects.requireNonNull(rv.getAdapter()).notifyDataSetChanged();
+
+        godButtonClick = false;
+
+        view.clearFocus();
+    }
+
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     private void initializeData() {
-
         cards = new ArrayList<>();
-        cards.add(TochkaCard.builder()
-                .latitudeDegree("55")
-                .latitudeMinutes("23")
-                .latitudeSeconds("25")
-                .latitudeSymbol("N")
-                .longitudeDegree("25")
-                .longitudeMinutes("47")
-                .longitudeSeconds("38")
-                .longitudeSymbol("E")
-                .text("Ахуительная история о том, как две самовлюбленных личности поняли, что как-то необходимо доказать свою илитарность. Для этого им приходитя каждый вечер покупать поднимающие дух напитки и творить!")
-                .build());
     }
 
-
     private void initializeAdapter() {
-
         RVAdapter adapter = new RVAdapter(cards);
         rv.setAdapter(adapter);
-
     }
 }

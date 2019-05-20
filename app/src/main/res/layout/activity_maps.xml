@@ -29,14 +29,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/god_button_circle"
+        android:background="@drawable/god_button"
         android:onClick="onClickGodButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
+        app:layout_constraintVertical_bias="0.959" />
 
     <EditText
         android:id="@+id/search"
@@ -46,7 +46,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/main_search_edittext"
+        android:background="@drawable/search_edittext"
         android:cursorVisible="false"
         android:hint="@string/main_search"
         android:paddingStart="10dp"
@@ -60,23 +60,23 @@
         app:layout_constraintVertical_bias="0.011" />
 
     <ImageButton
-        android:id="@+id/menu_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/profile_button"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="50dp"
-        android:background="@drawable/menu_button"
+        android:background="@drawable/profile_button"
         android:onClick="onClickProfileButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/search"
         app:layout_constraintTop_toTopOf="@+id/search" />
 
     <ImageView
         android:id="@+id/tochka_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -87,7 +87,281 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.467" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/add_window"
+        android:layout_width="245dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="152dp"
+        android:background="@drawable/add_window"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/add_latitude_degree_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_latitude_degree"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/add_latitude_degree_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_degree_digit"
+            android:layout_toEndOf="@+id/add_latitude_degree_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_degrees_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_degree_digit"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_degree_digit" />
+
+        <TextView
+            android:id="@+id/add_latitude_minute_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_degree_symbol"
+            android:layout_toEndOf="@+id/add_latitude_degree_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_latitude_minutes"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_degree_symbol"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_degree_symbol" />
+
+        <TextView
+            android:id="@+id/add_latitude_minute_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_minute_digit"
+            android:layout_toEndOf="@+id/add_latitude_minute_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_minutes_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_minute_digit"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_minute_digit" />
+
+        <TextView
+            android:id="@+id/add_latitude_seconds_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_minute_symbol"
+            android:layout_toEndOf="@+id/add_latitude_minute_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_latitude_seconds"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_minute_symbol"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_minute_symbol" />
+
+        <TextView
+            android:id="@+id/add_latitude_seconds_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_seconds_digit"
+            android:layout_toEndOf="@+id/add_latitude_seconds_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_seconds_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_seconds_digit"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_seconds_digit" />
+
+        <TextView
+            android:id="@+id/add_latitude_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_latitude_seconds_symbol"
+            android:layout_toEndOf="@+id/add_latitude_seconds_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_latitude_symbol"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/add_latitude_seconds_symbol"
+            app:layout_constraintTop_toTopOf="@+id/add_latitude_seconds_symbol" />
+
+
+        <TextView
+            android:id="@+id/add_longitude_degree_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_latitude_degree_digit"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_longitude_degree"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/add_latitude_degree_digit"
+            app:layout_constraintTop_toBottomOf="@+id/add_latitude_degree_digit" />
+
+        <TextView
+            android:id="@+id/add_longitude_degree_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_degree_digit"
+            android:layout_toEndOf="@+id/add_longitude_degree_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_degrees_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_degree_digit"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_degree_digit" />
+
+        <TextView
+            android:id="@+id/add_longitude_minute_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_degree_symbol"
+            android:layout_toEndOf="@+id/add_longitude_degree_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_longitude_minutes"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_degree_symbol"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_degree_symbol" />
+
+        <TextView
+            android:id="@+id/add_longitude_minute_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_minute_digit"
+            android:layout_toEndOf="@+id/add_longitude_minute_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_minutes_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_minute_digit"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_minute_digit" />
+
+        <TextView
+            android:id="@+id/add_longitude_seconds_digit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_minute_symbol"
+            android:layout_toEndOf="@+id/add_longitude_minute_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_longitude_seconds"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_minute_symbol"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_minute_symbol" />
+
+        <TextView
+            android:id="@+id/add_longitude_seconds_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_seconds_digit"
+            android:layout_toEndOf="@+id/add_longitude_seconds_digit"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_seconds_symbol"
+            android:textColor="@color/profile_card_symbol"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_seconds_digit"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_seconds_digit" />
+
+        <TextView
+            android:id="@+id/add_longitude_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/add_longitude_seconds_symbol"
+            android:layout_toEndOf="@+id/add_longitude_seconds_symbol"
+            android:background="@color/colorProfileWhiteBack"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@string/card_longitude_symbol"
+            android:textColor="@color/profile_card_digit"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_longitude_seconds_symbol"
+            app:layout_constraintStart_toEndOf="@+id/add_longitude_seconds_symbol" />
+
+        <ImageView
+            android:id="@+id/add_rightbar"
+            android:layout_width="47dp"
+            android:layout_height="147dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/add_rightbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/add_cancel"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/add_cancel"
+            android:onClick="onClickAddCancel"
+            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintTop_toTopOf="@+id/add_rightbar" />
+
+        <ImageButton
+            android:id="@+id/add_lock"
+            android:layout_width="14dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/add_lock"
+            android:onClick="onClickAddLock"
+            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintTop_toBottomOf="@+id/add_cancel" />
+
+        <ImageButton
+            android:id="@+id/add_approve"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/add_approve"
+            android:onClick="onClickAddApprove"
+            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintTop_toBottomOf="@+id/add_lock" />
+
+        <EditText
+            android:id="@+id/add_story"
+            android:layout_width="161dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:background="@color/transparency"
+            android:cursorVisible="true"
+            android:fontFamily="@font/comfortaa"
+            android:gravity="top|left"
+            android:maxLength="301"
+            android:paddingStart="10dp"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/profile_card_story"
+            android:textSize="10.5sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_layout"
@@ -102,21 +376,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
-            android:layout_width="248dp"
-            android:layout_height="544dp"
+            style="@style/scrollbar_shape_style"
+            android:layout_width="271dp"
+            android:layout_height="541dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:scrollbarStyle="insideInset"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/settings"
+            app:layout_constraintEnd_toEndOf="@+id/rightbar"
+            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings">
 
         </androidx.recyclerview.widget.RecyclerView>
-
 
         <TextView
             android:id="@+id/textView"
@@ -133,44 +408,40 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.04" />
 
+        <ImageView
+            android:id="@+id/rightbar"
+            android:layout_width="60dp"
+            android:layout_height="781dp"
+            android:background="@drawable/profile_rightbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+
         <ImageButton
             android:id="@+id/exit_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/transparency"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/profile_exit_button"
             android:onClick="onClickProfileButton"
-            android:src="@drawable/profile_exit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
+            app:layout_constraintHorizontal_bias="0.979"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/transparency"
-            android:src="@drawable/settings"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/profile_setting_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/exit_profile"
             app:layout_constraintVertical_bias="0.011" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="95dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

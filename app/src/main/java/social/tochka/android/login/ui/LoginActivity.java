@@ -2,11 +2,10 @@ package social.tochka.android.login.ui;
 
 import android.app.Activity;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -173,11 +172,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (passwordEditText.getInputType() == 129) {
                     passwordEditText.setInputType(EditorInfo.TYPE_NULL);
                     passwordEditText.setTextSize(16);
-                    eye_pass.setImageResource(R.drawable.eye_on);
+                    eye_pass.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.login_eye_color_button));
                 } else {
                     passwordEditText.setInputType(129);
                     passwordEditText.setTextSize(16);
-                    eye_pass.setImageResource(R.drawable.eye_off);
+                    eye_pass.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.login_eye_grey_button));
                 }
             }
         });
@@ -188,11 +187,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (confirmEditText.getInputType() == 129) {
                     confirmEditText.setInputType(EditorInfo.TYPE_NULL);
                     confirmEditText.setTextSize(16);
-                    eye_conf.setImageResource(R.drawable.eye_on);
+                    eye_pass.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.login_eye_color_button));
                 } else {
                     confirmEditText.setInputType(129);
                     confirmEditText.setTextSize(16);
-                    eye_conf.setImageResource(R.drawable.eye_off);
+                    eye_pass.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.login_eye_grey_button));
                 }
             }
         });
@@ -208,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void hideKeyboard(View view) {
-        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 

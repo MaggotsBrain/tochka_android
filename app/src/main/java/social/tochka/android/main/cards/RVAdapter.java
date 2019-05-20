@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,10 +14,9 @@ import social.tochka.android.R;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CardViewHolder> {
 
-    List<TochkaCard> cards;
+    private List<TochkaCard> cards;
 
-    public static class CardViewHolder extends RecyclerView.ViewHolder {
-
+    static class CardViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
 
         CardViewHolder(CardView cv) {
@@ -30,14 +30,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CardViewHolder> {
     }
 
     @Override
-    public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         CardView cv = (CardView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.tochka_card_view, parent, false);
         return new CardViewHolder(cv);
     }
 
     @Override
-    public void onBindViewHolder(CardViewHolder cardViewHolder, int position) {
+    public void onBindViewHolder(@NonNull CardViewHolder cardViewHolder, int position) {
         CardView cardView = cardViewHolder.cardView;
         TextView longitude_degree_digit = cardView.findViewById(R.id.longitude_degree_digit);
         longitude_degree_digit.setText(cards.get(position).getLongitudeDegree());
@@ -59,7 +59,6 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CardViewHolder> {
 
         TextView text = cardView.findViewById(R.id.card_text);
         text.setText(cards.get(position).getText());
-
     }
 
     @Override
