@@ -25,18 +25,24 @@
         android:id="@+id/god_button"
         android:layout_width="84dp"
         android:layout_height="86dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/god_button"
         android:onClick="onClickGodButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.91" />
+
+    <ImageView
+        android:id="@+id/kostil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/kostil"
+        app:layout_constraintBottom_toBottomOf="@+id/god_button"
+        app:layout_constraintEnd_toEndOf="@+id/god_button"
+        app:layout_constraintStart_toStartOf="@+id/god_button"
+        app:layout_constraintTop_toTopOf="@+id/god_button"
+        app:layout_constraintVertical_bias="0.440" />
 
     <EditText
         android:id="@+id/search"
@@ -91,10 +97,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/add_window"
-        android:layout_width="245dp"
-        android:layout_height="160dp"
+        android:layout_width="265dp"
+        android:layout_height="170dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="150dp"
         android:background="@drawable/add_window"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +119,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_latitude_degree"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -127,7 +133,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_degree_digit"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_degree_digit" />
 
@@ -141,7 +147,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_latitude_minutes"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_degree_symbol"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_degree_symbol" />
 
@@ -155,7 +161,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_minute_digit"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_minute_digit" />
 
@@ -169,7 +175,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_latitude_seconds"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_minute_symbol"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_minute_symbol" />
 
@@ -183,7 +189,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_seconds_digit"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_seconds_digit" />
 
@@ -197,7 +203,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_latitude_symbol"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/add_latitude_seconds_symbol"
             app:layout_constraintTop_toTopOf="@+id/add_latitude_seconds_symbol" />
 
@@ -212,7 +218,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_longitude_degree"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/add_latitude_degree_digit"
             app:layout_constraintTop_toBottomOf="@+id/add_latitude_degree_digit" />
 
@@ -226,7 +232,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_degree_digit"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_degree_digit" />
 
@@ -240,7 +246,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_longitude_minutes"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_degree_symbol"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_degree_symbol" />
 
@@ -254,7 +260,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_minute_digit"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_minute_digit" />
 
@@ -268,7 +274,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_longitude_seconds"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_minute_symbol"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_minute_symbol" />
 
@@ -282,7 +288,7 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_seconds_digit"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_seconds_digit" />
 
@@ -296,13 +302,13 @@
             android:fontFamily="@font/raleway_semibold"
             android:text="@string/card_longitude_symbol"
             android:textColor="@color/profile_card_digit"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_seconds_symbol"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_seconds_symbol" />
 
         <ImageView
             android:id="@+id/add_rightbar"
-            android:layout_width="47dp"
+            android:layout_width="50dp"
             android:layout_height="147dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/add_rightbar"
@@ -311,8 +317,8 @@
 
         <ImageButton
             android:id="@+id/add_cancel"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
             android:background="@drawable/add_cancel"
@@ -322,10 +328,10 @@
 
         <ImageButton
             android:id="@+id/add_lock"
-            android:layout_width="14dp"
-            android:layout_height="19dp"
-            android:layout_marginTop="34dp"
-            android:layout_marginEnd="13dp"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="14dp"
             android:background="@drawable/add_lock"
             android:onClick="onClickAddLock"
             app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
@@ -333,10 +339,10 @@
 
         <ImageButton
             android:id="@+id/add_approve"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/add_approve"
             android:onClick="onClickAddApprove"
             app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
@@ -347,7 +353,7 @@
             android:layout_width="161dp"
             android:layout_height="86dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="64dp"
             android:background="@color/transparency"
             android:cursorVisible="true"
             android:fontFamily="@font/comfortaa"
@@ -356,7 +362,7 @@
             android:paddingStart="10dp"
             android:selectAllOnFocus="true"
             android:textColor="@color/profile_card_story"
-            android:textSize="10.5sp"
+            android:textSize="13sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -379,17 +385,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv"
-            style="@style/scrollbar_shape_style"
-            android:layout_width="271dp"
+            android:layout_width="261dp"
             android:layout_height="541dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="180dp"
             android:scrollbarStyle="insideInset"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/rightbar"
-            app:layout_constraintHorizontal_bias="0.119"
+            app:layout_constraintHorizontal_bias="0.015"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings">
+            app:layout_constraintTop_toTopOf="parent">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -410,11 +415,11 @@
 
         <ImageView
             android:id="@+id/rightbar"
-            android:layout_width="60dp"
+            android:layout_width="75dp"
             android:layout_height="781dp"
             android:background="@drawable/profile_rightbar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></ImageView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/exit_profile"
@@ -425,7 +430,7 @@
             android:background="@drawable/profile_exit_button"
             android:onClick="onClickProfileButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.979"
+            app:layout_constraintHorizontal_bias="0.959"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -438,10 +443,108 @@
             android:background="@drawable/profile_setting_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.953"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/exit_profile"
-            app:layout_constraintVertical_bias="0.011" />
+            app:layout_constraintVertical_bias="0.009" />
+
+        <ImageView
+            android:id="@+id/tochki_write"
+            android:layout_width="25dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="236dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/profile_writing_tochka"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/construct"
+            android:layout_width="30dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/profile_construct"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.962" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/first_tochka_layout"
+            android:layout_width="249dp"
+            android:layout_height="572dp"
+            android:layout_marginTop="156dp"
+            android:background="@color/colorProfileWhiteBack"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/first_tochka_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="220dp"
+                android:background="@drawable/profile_first_tochka"
+                android:onClick="onClickFirstTochka"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_first_tochka1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="88dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/first_tochka_1"
+                android:textColor="@color/first_tochka"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_first_tochka2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/first_tochka_2"
+                android:textColor="@color/first_tochka"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_first_tochka1" />
+
+            <TextView
+                android:id="@+id/text_first_tochka3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/first_tochka_3"
+                android:textColor="@color/first_tochka"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_first_tochka2" />
+
+            <TextView
+                android:id="@+id/text_first_tochka4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/first_tochka_4"
+                android:textColor="@color/first_tochka"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_first_tochka3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

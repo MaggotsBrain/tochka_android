@@ -12,8 +12,8 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="invalid_username">Некорректное имя</string>
+    <string name="invalid_password">Некорректный пароль</string>
     <string name="login_failed">"Login failed"</string>
     <string name="next_button">ДАЛЕЕ</string>
 
@@ -39,6 +39,10 @@
     <string name="card_latitude_symbol">N</string>
     <string name="card_longitude_symbol">E</string>
     <string name="story">Ахуительная история о том, как две самовлюбленных личности поняли, что как-то необходимо доказать свою илитарность. Для этого им приходитя каждый вечер покупать поднимающие дух напитки и творить!</string>
+    <string name="first_tochka_1">Как-то здесь</string>
+    <string name="first_tochka_2">пустовато...</string>
+    <string name="first_tochka_3">Добавим первую</string>
+    <string name="first_tochka_4">точку?</string>
 
 
 </resources>

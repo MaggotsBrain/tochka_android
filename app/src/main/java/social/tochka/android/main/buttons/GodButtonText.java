@@ -55,8 +55,9 @@ public class GodButtonText extends View {
         coordinates = CoordinatesConverter.toMap(MapsActivity.latitude, MapsActivity.longitude);
 
         path.reset();
-        path.addCircle(539, 1492, 115, Path.Direction.CW);
+        path.addCircle(MapsActivity.xGod, MapsActivity.yGod, 115, Path.Direction.CW);
         int voff = -20;
+
 
         p.setTypeface(Typeface.DEFAULT_BOLD);
 

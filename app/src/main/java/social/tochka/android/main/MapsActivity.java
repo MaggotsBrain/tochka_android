@@ -47,6 +47,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private List<TochkaCard> cards;
     private RecyclerView rv;
 
+    public static int xGod;
+    public static int yGod;
+
     public static String latitude = "-16:42:45,02561";
     public static String longitude = "49:13:53,22818";
 
@@ -113,6 +116,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
+                xGod = (int) findViewById(R.id.kostil).getX();
+                yGod = (int) findViewById(R.id.kostil).getY();
                 LatLng target = mMap.getCameraPosition().target;
                 latitude = Location.convert(target.latitude, Location.FORMAT_SECONDS);
                 longitude = Location.convert(target.longitude, Location.FORMAT_SECONDS);
@@ -154,6 +159,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 godButtonText.setVisibility(View.INVISIBLE);
                 godTextWasVisible = true;
             }
+        }
+    }
+
+    public void onClickFirstTochka(View view) {
+        findViewById(R.id.tochka_image).setVisibility(View.VISIBLE);
+        godButtonText.setVisibility(View.VISIBLE);
+        godButtonClick = true;
+        findViewById(R.id.profile_layout).setVisibility(View.INVISIBLE);
+        findViewById(R.id.profile_layout).setClickable(false);
+        findViewById(R.id.god_button).setClickable(true);
+        profileVisible = false;
+        if (godTextWasVisible) {
+            godButtonText.setVisibility(View.VISIBLE);
+            godTextWasVisible = false;
         }
     }
 
@@ -216,6 +235,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Objects.requireNonNull(rv.getAdapter()).notifyDataSetChanged();
 
         godButtonClick = false;
+
+        findViewById(R.id.first_tochka_layout).setVisibility(View.GONE);
 
         view.clearFocus();
     }
