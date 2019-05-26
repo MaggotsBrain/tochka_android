@@ -224,6 +224,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         TochkaCard tochkaCard = TochkaCard.builder()
                 .username("sweet_child")
+                .latLng(target)
                 .latitudeDegree(coordinates.get("degree_latitude"))
                 .latitudeMinutes(coordinates.get("minutes_latitude"))
                 .latitudeSeconds(coordinates.get("seconds_latitude"))
@@ -234,6 +235,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .longitudeSymbol(coordinates.get("longitude_symbol"))
                 .text(storyText.getText().toString())
                 .build();
+
         cards.add(tochkaCard);
         UUID uuid = UUID.randomUUID();
         MarkerSaver.tochkaMap.put(uuid, tochkaCard);

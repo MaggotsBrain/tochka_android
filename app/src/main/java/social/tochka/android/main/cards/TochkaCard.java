@@ -1,5 +1,7 @@
 package social.tochka.android.main.cards;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +14,8 @@ import lombok.NoArgsConstructor;
 public class TochkaCard {
 
     private String username = "sweet_child";
+
+    private LatLng latLng;
 
     private String latitudeSymbol;
     private String latitudeDegree;
