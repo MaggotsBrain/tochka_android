@@ -21,6 +21,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/change_map_type_button"
+        android:layout_width="53dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/change_map_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
     <ImageButton
         android:id="@+id/god_button"
         android:layout_width="84dp"
@@ -330,22 +346,22 @@
             android:id="@+id/add_lock"
             android:layout_width="15dp"
             android:layout_height="20dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/add_lock"
             android:onClick="onClickAddLock"
-            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintEnd_toEndOf="@+id/add_cancel"
+            app:layout_constraintStart_toStartOf="@+id/add_cancel"
             app:layout_constraintTop_toBottomOf="@+id/add_cancel" />
 
         <ImageButton
             android:id="@+id/add_approve"
             android:layout_width="20dp"
             android:layout_height="18dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/add_approve"
             android:onClick="onClickAddApprove"
-            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintEnd_toEndOf="@+id/add_lock"
+            app:layout_constraintStart_toStartOf="@+id/add_lock"
             app:layout_constraintTop_toBottomOf="@+id/add_lock" />
 
         <EditText

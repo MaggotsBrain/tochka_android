@@ -19,7 +19,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_degree"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -31,7 +31,7 @@
             android:layout_alignTop="@+id/latitude_degree_digit"
             android:layout_toEndOf="@+id/latitude_degree_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp"
@@ -46,7 +46,7 @@
             android:layout_alignTop="@+id/latitude_degree_symbol"
             android:layout_toEndOf="@+id/latitude_degree_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_minutes"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -58,7 +58,7 @@
             android:layout_alignTop="@+id/latitude_minute_digit"
             android:layout_toEndOf="@+id/latitude_minute_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp" />
@@ -70,7 +70,7 @@
             android:layout_alignTop="@+id/latitude_minute_symbol"
             android:layout_toEndOf="@+id/latitude_minute_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_seconds"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -82,7 +82,7 @@
             android:layout_alignTop="@+id/latitude_seconds_digit"
             android:layout_toEndOf="@+id/latitude_seconds_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp" />
@@ -94,7 +94,7 @@
             android:layout_alignTop="@+id/latitude_seconds_symbol"
             android:layout_toEndOf="@+id/latitude_seconds_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_symbol"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -109,7 +109,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="0dp"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_degree"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -121,7 +121,7 @@
             android:layout_alignTop="@+id/longitude_degree_digit"
             android:layout_toEndOf="@+id/longitude_degree_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp"
@@ -136,7 +136,7 @@
             android:layout_alignTop="@+id/longitude_degree_symbol"
             android:layout_toEndOf="@+id/longitude_degree_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_minutes"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -148,7 +148,7 @@
             android:layout_alignTop="@+id/longitude_minute_digit"
             android:layout_toEndOf="@+id/longitude_minute_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp" />
@@ -160,7 +160,7 @@
             android:layout_alignTop="@+id/longitude_minute_symbol"
             android:layout_toEndOf="@+id/longitude_minute_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_seconds"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
@@ -172,7 +172,7 @@
             android:layout_alignTop="@+id/longitude_seconds_digit"
             android:layout_toEndOf="@+id/longitude_seconds_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="21sp" />
@@ -184,7 +184,7 @@
             android:layout_alignTop="@+id/longitude_seconds_symbol"
             android:layout_toEndOf="@+id/longitude_seconds_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_symbol"
             android:textColor="@color/profile_card_digit"
             android:textSize="21sp" />
