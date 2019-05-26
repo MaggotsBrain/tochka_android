@@ -7,5 +7,10 @@
     tools:context=".construct.ConstructFragment">
 
 
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FUCK FUCK FUCK FUCK"
+        android:textSize="36sp" />
 </FrameLayout>

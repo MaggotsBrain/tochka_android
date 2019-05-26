@@ -9,18 +9,6 @@
     android:focusableInTouchMode="true"
     tools:context="social.tochka.android.main.MapsActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/profile_layout"
-        app:layout_constraintStart_toStartOf="@+id/map"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
-
     <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
         class="com.google.android.gms.maps.SupportMapFragment"
@@ -557,6 +545,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_first_tochka3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

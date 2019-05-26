@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import social.tochka.android.construct.ConstructFragment;
 import social.tochka.android.construct.ConstructSplashActivity;
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
@@ -111,7 +113,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mConstructImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //loadFragment(new ConstructFragment());
                 Intent intent = new Intent(MapsActivity.this, ConstructSplashActivity.class);
                 startActivity(intent);
             }
@@ -278,15 +279,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rv.setAdapter(adapter);
     }
 
-//    private boolean loadFragment(Fragment fragment) {
-//        //switching fragment
-//        if (fragment != null) {
-//            getSupportFragmentManager()
-//                    .beginTransaction()
-//                    .replace(R.id.fragment_container, fragment)
-//                    .commit();
-//            return true;
-//        }
-//        return false;
-//    }
+ //private boolean loadFragment(Fragment fragment) {
+ //    //switching fragment
+ //    if (fragment != null) {
+ //        getSupportFragmentManager()
+ //                .beginTransaction()
+ //                .replace(R.id.fragment_container, fragment)
+ //                .commit();
+ //        return true;
+ //    }
+ //    return false;
+ //}
 }

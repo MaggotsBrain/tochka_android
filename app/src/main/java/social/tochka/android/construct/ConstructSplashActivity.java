@@ -51,7 +51,7 @@ public class ConstructSplashActivity extends AppCompatActivity {
                         clickCount++;
                         break;
                     case 2:
-//                         start another activity
+//                      start another activity
                         Intent intent = new Intent(ConstructSplashActivity.this, ConstructActivity.class);
                         startActivity(intent);
                         break;

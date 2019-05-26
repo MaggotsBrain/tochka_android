@@ -23,7 +23,15 @@ public class ConstructFragmentPageAdapter extends FragmentPagerAdapter {
     }
 
     @Override public Fragment getItem(int position) {
-        return ConstructFragment.newInstance(position + 1);
+        switch (position) {
+            case 0:
+                return MerchTabFragment.newInstance();
+            case 1:
+                return TochkaTabFragment.newInstance();
+            case 2:
+                return CustomTabFragment.newInstance();
+        }
+        return new MerchTabFragment();
     }
 
     @Override public CharSequence getPageTitle(int position) {
