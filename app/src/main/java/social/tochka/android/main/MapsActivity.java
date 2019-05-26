@@ -1,17 +1,20 @@
 package social.tochka.android.main;
 
 import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+import social.tochka.android.ConstructSplashActivity;
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
 import social.tochka.android.main.cards.RVAdapter;
@@ -53,8 +57,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public static String latitude = "-16:42:45,02561";
     public static String longitude = "49:13:53,22818";
 
+
+
+    // klimenco
+    private ImageView mConstructImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Typeface tf = ResourcesCompat.getFont(getApplicationContext(), R.font.overpass_mono_bold);
         godButtonClick = false;
         godTextWasVisible = false;
@@ -66,6 +76,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
 
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
@@ -95,6 +106,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rv.setLayoutManager(llm);
         initializeData();
         initializeAdapter();
+
+        mConstructImageView = findViewById(R.id.construct);
+        mConstructImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //loadFragment(new ConstructFragment());
+                Intent intent = new Intent(MapsActivity.this, ConstructSplashActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -253,5 +274,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void initializeAdapter() {
         RVAdapter adapter = new RVAdapter(cards);
         rv.setAdapter(adapter);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+
+        return false;
     }
 }
