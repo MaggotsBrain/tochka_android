@@ -287,15 +287,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rv.setAdapter(adapter);
     }
 
- //private boolean loadFragment(Fragment fragment) {
- //    //switching fragment
- //    if (fragment != null) {
- //        getSupportFragmentManager()
- //                .beginTransaction()
- //                .replace(R.id.fragment_container, fragment)
- //                .commit();
- //        return true;
- //    }
- //    return false;
- //}
 }

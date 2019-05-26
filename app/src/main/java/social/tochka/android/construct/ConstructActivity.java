@@ -9,13 +9,15 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 
 import social.tochka.android.R;
+import social.tochka.android.construct.dummy.DummyContent;
 
-public class ConstructActivity extends AppCompatActivity {
+public class ConstructActivity extends AppCompatActivity implements MerchListFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_construct);
+
         Log.d("TAG","ConstructActivity onCreate");
 
         // Find the view pager that will allow the user to swipe between fragments
@@ -31,5 +33,10 @@ public class ConstructActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        Log.d("TAG","FUCK FRAGMENT INTERACTION");
     }
 }

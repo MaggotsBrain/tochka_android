@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import social.tochka.android.R;
+import social.tochka.android.construct.dummy.DummyContent;
 
 
 public class MerchTabFragment extends Fragment {
@@ -57,12 +59,27 @@ public class MerchTabFragment extends Fragment {
         // preparing list data
         prepareListData();
 
-        ExpandableListAdapter expandableListAdapter = new ExpandableListAdapter(getContext(),
+        final ExpandableListAdapter expandableListAdapter = new ExpandableListAdapter(getContext(),
                 listDataHeader, listDataChild);
 
         // setting list adapter
         expandableListView.setAdapter(expandableListAdapter);
 
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                Log.d("TAG","group :" + listDataHeader.get(groupPosition) + "  ,child : "
+                        + listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition) );
+
+                // clicked on shoppers
+                // show fragment with list
+                // list contains images and something else
+
+                expandableListView.setVisibility(View.GONE);
+
+                return loadFragment(new MerchListFragment());
+            }
+        });
 
         return view;
     }
@@ -97,5 +114,20 @@ public class MerchTabFragment extends Fragment {
         listDataChild.put(listDataHeader.get(1), accessoriesList);
         listDataChild.put(listDataHeader.get(2), jewerlyList);
     }
+
+
+    private boolean loadFragment(Fragment fragment) {
+
+        //switching fragment
+        if (fragment != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
 
 }
