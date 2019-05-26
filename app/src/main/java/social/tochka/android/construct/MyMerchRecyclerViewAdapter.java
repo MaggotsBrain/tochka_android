@@ -1,29 +1,24 @@
 package social.tochka.android.construct;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import social.tochka.android.R;
-import social.tochka.android.construct.MerchListFragment.OnListFragmentInteractionListener;
-import social.tochka.android.construct.dummy.DummyContent.DummyItem;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
+import social.tochka.android.R;
+import social.tochka.android.construct.MerchListFragment.OnListFragmentInteractionListener;
+
+
 public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<MerchItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyMerchRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public MyMerchRecyclerViewAdapter(List<MerchItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,43 +32,42 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-//        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
-
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
-            }
-        });
+        holder.mMerchItemImageView.setImageBitmap(mValues.get(position).getBlackBitmap());
+        //holder.mIdView.setText(mValues.get(position).id);
+        //holder.mContentView.setText(mValues.get(position).content);
+        //
+        //holder.mView.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        if (null != mListener) {
+        //            // Notify the active callbacks interface (the activity, if the
+        //            // fragment is attached to one) that an item has been selected.
+        //            mListener.onListFragmentInteraction(holder.mItem);
+        //        }
+        //    }
+        //});
     }
 
     @Override
     public int getItemCount() {
         return mValues.size();
+        //return mValues.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-//        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final ImageView mMerchItemImageView, mMerchItemSizeView;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-//            mIdView = (TextView) view.findViewById(R.id.item_number);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mMerchItemImageView = view.findViewById(R.id.merch_item_image_view);
+            mMerchItemSizeView = view.findViewById(R.id.merch_item_size_view);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + "SASAK";
         }
     }
 }

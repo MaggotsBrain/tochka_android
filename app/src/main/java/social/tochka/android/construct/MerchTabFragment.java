@@ -1,23 +1,19 @@
 package social.tochka.android.construct;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
+
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import social.tochka.android.R;
-import social.tochka.android.construct.dummy.DummyContent;
 
 
 public class MerchTabFragment extends Fragment {
@@ -110,7 +106,7 @@ public class MerchTabFragment extends Fragment {
         jewerlyList.add("БРАСЛЕТЫ");
         jewerlyList.add("КОЛЬЦА");
 
-        listDataChild.put(listDataHeader.get(0), clotheslist); // Header, Child data
+        listDataChild.put(listDataHeader.get(0), clotheslist);
         listDataChild.put(listDataHeader.get(1), accessoriesList);
         listDataChild.put(listDataHeader.get(2), jewerlyList);
     }

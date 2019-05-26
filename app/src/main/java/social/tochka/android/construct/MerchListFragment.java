@@ -1,23 +1,26 @@
 package social.tochka.android.construct;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import social.tochka.android.R;
-import social.tochka.android.construct.dummy.DummyContent;
-import social.tochka.android.construct.dummy.DummyContent.DummyItem;
-
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import social.tochka.android.R;
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -72,7 +75,22 @@ public class MerchListFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyMerchRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            List<MerchItem> merchItemList = new ArrayList<>();
+
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.eightnoga);
+
+            MerchItem buffer = new MerchItem();
+
+            buffer.setBlackBitmap(bitmap);
+            buffer.setGreenBitmap(bitmap);
+            buffer.setGreyBitmap(bitmap);
+            buffer.setRedBitmap(bitmap);
+
+            merchItemList.add(buffer);
+            merchItemList.add(buffer);
+
+            recyclerView.setAdapter(new MyMerchRecyclerViewAdapter(merchItemList, mListener));
         }
         return view;
     }
@@ -107,6 +125,6 @@ public class MerchListFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(String item);
     }
 }

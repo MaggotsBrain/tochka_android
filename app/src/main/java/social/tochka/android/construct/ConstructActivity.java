@@ -9,7 +9,6 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 
 import social.tochka.android.R;
-import social.tochka.android.construct.dummy.DummyContent;
 
 public class ConstructActivity extends AppCompatActivity implements MerchListFragment.OnListFragmentInteractionListener {
 
@@ -36,7 +35,7 @@ public class ConstructActivity extends AppCompatActivity implements MerchListFra
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(String item) {
         Log.d("TAG","FUCK FRAGMENT INTERACTION");
     }
 }
