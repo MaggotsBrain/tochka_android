@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 import social.tochka.android.construct.ConstructSplashActivity;
 import social.tochka.android.R;
@@ -37,6 +38,8 @@ import social.tochka.android.main.buttons.GodButtonText;
 import social.tochka.android.main.cards.RVAdapter;
 import social.tochka.android.main.cards.TochkaCard;
 import social.tochka.android.main.util.CoordinatesConverter;
+import social.tochka.android.main.util.CustomInfoWindowAdapter;
+import social.tochka.android.main.util.MarkerSaver;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -56,7 +59,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public static String latitude = "-16:42:45,02561";
     public static String longitude = "49:13:53,22818";
-
 
 
     // klimenco
@@ -134,6 +136,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 MapStyleOptions.loadRawResourceStyle(
                         this, R.raw.map_style));
         mMap = googleMap;
+        mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(getApplicationContext()));
         mMap.setOnCameraMoveListener(new GoogleMap.OnCameraMoveListener() {
             @Override
             public void onCameraMove() {
@@ -147,6 +150,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
         mMap.getUiSettings().setCompassEnabled(false);
+        mMap.getUiSettings().setMapToolbarEnabled(false);
 
     }
 
@@ -217,7 +221,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         longitude = Location.convert(target.longitude, Location.FORMAT_SECONDS);
         Map<String, String> coordinates = CoordinatesConverter.toMap(latitude, longitude);
 
-        cards.add(TochkaCard.builder()
+        TochkaCard tochkaCard = TochkaCard.builder()
+                .username("sweet_child")
                 .latitudeDegree(coordinates.get("degree_latitude"))
                 .latitudeMinutes(coordinates.get("minutes_latitude"))
                 .latitudeSeconds(coordinates.get("seconds_latitude"))
@@ -227,7 +232,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .longitudeSeconds(coordinates.get("seconds_longitude"))
                 .longitudeSymbol(coordinates.get("longitude_symbol"))
                 .text(storyText.getText().toString())
-                .build());
+                .build();
+        cards.add(tochkaCard);
+        UUID uuid = UUID.randomUUID();
+        MarkerSaver.tochkaMap.put(uuid, tochkaCard);
 
         TextView latitude_degree_digit = findViewById(R.id.add_latitude_degree_digit);
         latitude_degree_digit.setText(coordinates.get("degree_latitude"));
@@ -250,7 +258,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions()
                 .position(target)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
-                .title(storyText.getText().toString()));
+                .title(uuid.toString()));
 
         storyText.getText().clear();
         findViewById(R.id.add_window).setVisibility(View.INVISIBLE);

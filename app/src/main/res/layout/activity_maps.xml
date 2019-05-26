@@ -19,7 +19,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/profile_layout"
         app:layout_constraintStart_toStartOf="@+id/map"
-        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
         android:id="@+id/map"
@@ -32,6 +34,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/change_map_type_button"
+        android:layout_width="53dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/change_map_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
     <ImageButton
         android:id="@+id/god_button"
@@ -112,11 +130,11 @@
         android:layout_width="265dp"
         android:layout_height="170dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/add_window"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -128,7 +146,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_degree"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -142,7 +160,7 @@
             android:layout_alignTop="@+id/add_latitude_degree_digit"
             android:layout_toEndOf="@+id/add_latitude_degree_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -156,7 +174,7 @@
             android:layout_alignTop="@+id/add_latitude_degree_symbol"
             android:layout_toEndOf="@+id/add_latitude_degree_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_minutes"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -170,7 +188,7 @@
             android:layout_alignTop="@+id/add_latitude_minute_digit"
             android:layout_toEndOf="@+id/add_latitude_minute_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -184,7 +202,7 @@
             android:layout_alignTop="@+id/add_latitude_minute_symbol"
             android:layout_toEndOf="@+id/add_latitude_minute_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_seconds"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -198,7 +216,7 @@
             android:layout_alignTop="@+id/add_latitude_seconds_digit"
             android:layout_toEndOf="@+id/add_latitude_seconds_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -212,7 +230,7 @@
             android:layout_alignTop="@+id/add_latitude_seconds_symbol"
             android:layout_toEndOf="@+id/add_latitude_seconds_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_latitude_symbol"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -227,7 +245,7 @@
             android:layout_below="@+id/add_latitude_degree_digit"
             android:layout_alignParentStart="true"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_degree"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -241,7 +259,7 @@
             android:layout_alignTop="@+id/add_longitude_degree_digit"
             android:layout_toEndOf="@+id/add_longitude_degree_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_degrees_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -255,7 +273,7 @@
             android:layout_alignTop="@+id/add_longitude_degree_symbol"
             android:layout_toEndOf="@+id/add_longitude_degree_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_minutes"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -269,7 +287,7 @@
             android:layout_alignTop="@+id/add_longitude_minute_digit"
             android:layout_toEndOf="@+id/add_longitude_minute_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_minutes_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -283,7 +301,7 @@
             android:layout_alignTop="@+id/add_longitude_minute_symbol"
             android:layout_toEndOf="@+id/add_longitude_minute_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_seconds"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
@@ -297,7 +315,7 @@
             android:layout_alignTop="@+id/add_longitude_seconds_digit"
             android:layout_toEndOf="@+id/add_longitude_seconds_digit"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_seconds_symbol"
             android:textColor="@color/profile_card_symbol"
             android:textSize="16sp"
@@ -311,53 +329,44 @@
             android:layout_alignTop="@+id/add_longitude_seconds_symbol"
             android:layout_toEndOf="@+id/add_longitude_seconds_symbol"
             android:background="@color/colorProfileWhiteBack"
-            android:fontFamily="@font/raleway_semibold"
+            android:fontFamily="@font/raleway_bold"
             android:text="@string/card_longitude_symbol"
             android:textColor="@color/profile_card_digit"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/add_longitude_seconds_symbol"
             app:layout_constraintStart_toEndOf="@+id/add_longitude_seconds_symbol" />
 
-        <ImageView
-            android:id="@+id/add_rightbar"
-            android:layout_width="50dp"
-            android:layout_height="147dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/add_rightbar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ImageButton
             android:id="@+id/add_cancel"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/add_cancel"
             android:onClick="onClickAddCancel"
-            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
-            app:layout_constraintTop_toTopOf="@+id/add_rightbar" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/add_lock"
             android:layout_width="15dp"
             android:layout_height="20dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="14dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/add_lock"
             android:onClick="onClickAddLock"
-            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintEnd_toEndOf="@+id/add_cancel"
+            app:layout_constraintStart_toStartOf="@+id/add_cancel"
             app:layout_constraintTop_toBottomOf="@+id/add_cancel" />
 
         <ImageButton
             android:id="@+id/add_approve"
             android:layout_width="20dp"
             android:layout_height="18dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/add_approve"
             android:onClick="onClickAddApprove"
-            app:layout_constraintEnd_toEndOf="@+id/add_rightbar"
+            app:layout_constraintEnd_toEndOf="@+id/add_lock"
+            app:layout_constraintStart_toStartOf="@+id/add_lock"
             app:layout_constraintTop_toBottomOf="@+id/add_lock" />
 
         <EditText

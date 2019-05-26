@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TochkaCard {
 
+    private String username = "sweet_child";
+
     private String latitudeSymbol;
     private String latitudeDegree;
     private String latitudeMinutes;

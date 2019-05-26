@@ -26,6 +26,12 @@
     <color name="profile_card_story">#666666</color>
     <color name="first_tochka">#B8B8B8</color>
 
+    <!--Marker info-->
+    <color name="marker_coordinates">#858585</color>
+    <color name="marker_username">#4CB5AB</color>
+    <color name="marker_story">#7C7C7C</color>
+
+
     <!--Construct-->
     <color name="black">#000000</color>
     <color name="construct_skip">#4CB5AB</color>
