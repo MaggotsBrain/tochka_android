@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class ConstructFragmentPageAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] { "МЕРЧ", "ТОЧКА", "КАСТОМ" };
+    private String tabTitles[] = new String[]{"МЕРЧ", "ТОЧКА", "КАСТОМ"};
 
     private Context context;
 
@@ -18,11 +18,13 @@ public class ConstructFragmentPageAdapter extends FragmentPagerAdapter {
         this.context = context;
     }
 
-    @Override public int getCount() {
+    @Override
+    public int getCount() {
         return PAGE_COUNT;
     }
 
-    @Override public Fragment getItem(int position) {
+    @Override
+    public Fragment getItem(int position) {
         switch (position) {
             case 0:
                 return MerchTabFragment.newInstance();
@@ -34,7 +36,8 @@ public class ConstructFragmentPageAdapter extends FragmentPagerAdapter {
         return new MerchTabFragment();
     }
 
-    @Override public CharSequence getPageTitle(int position) {
+    @Override
+    public CharSequence getPageTitle(int position) {
         // генерируем заголовок в зависимости от позиции
         return tabTitles[position];
     }
