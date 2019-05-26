@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import social.tochka.android.ConstructSplashActivity;
+import social.tochka.android.construct.ConstructSplashActivity;
 import social.tochka.android.R;
 import social.tochka.android.main.buttons.GodButtonText;
 import social.tochka.android.main.cards.RVAdapter;
@@ -146,6 +146,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
+        mMap.getUiSettings().setCompassEnabled(false);
+
     }
 
     public void onClickGodButton(View view) {
@@ -276,16 +278,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rv.setAdapter(adapter);
     }
 
-    private boolean loadFragment(Fragment fragment) {
-        //switching fragment
-        if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-
-        return false;
-    }
+//    private boolean loadFragment(Fragment fragment) {
+//        //switching fragment
+//        if (fragment != null) {
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(R.id.fragment_container, fragment)
+//                    .commit();
+//            return true;
+//        }
+//        return false;
+//    }
 }

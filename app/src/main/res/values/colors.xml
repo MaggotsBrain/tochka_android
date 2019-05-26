@@ -2,8 +2,8 @@
 <resources>
 
     <!--Common-->
-    <color name="colorPrimary">#F6F6F6</color>
-    <color name="colorPrimaryDark">#F6F6F6</color>
+    <color name="colorPrimary">#EBEBEB</color>
+    <color name="colorPrimaryDark">#EBEBEB</color>
     <color name="colorAccent">#F6F6F6</color>
     <color name="colorWhiteBack">#F6F6F6</color>
     <color name="colorProfileWhiteBack">#F6F6F6</color>
@@ -25,6 +25,12 @@
     <color name="profile_card_symbol">#E9501C</color>
     <color name="profile_card_story">#666666</color>
     <color name="first_tochka">#B8B8B8</color>
+
+    <!--Construct-->
+    <color name="black">#000000</color>
+    <color name="construct_skip">#4CB5AB</color>
+    <color name="construct_title_background">#F1F1F1</color>
+    <color name="construct_tab_background">#F5F5F5</color>
 
 
 </resources>
