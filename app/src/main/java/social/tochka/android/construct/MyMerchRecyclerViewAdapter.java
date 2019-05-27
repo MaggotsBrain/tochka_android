@@ -35,13 +35,25 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mMerchItemImageView.setImageBitmap(mValues.get(position).getBlackBitmap());
+        holder.mMerchItemImageView.setImageBitmap(mValues.get(position).getBlackList().get(0));
 
-        holder.mBlackButton.setOnClickListener(buttonListener);
-        holder.mGreenButton.setOnClickListener(buttonListener);
-        holder.mGreyButton.setOnClickListener(buttonListener);
-        holder.mRedButton.setOnClickListener(buttonListener);
+        //holder.mBlackButton.setOnClickListener(buttonListener);
+        //holder.mGreenButton.setOnClickListener(buttonListener);
+        //holder.mGreyButton.setOnClickListener(buttonListener);
+        //holder.mRedButton.setOnClickListener(buttonListener);
 
+        setListener(position, holder.mBlackButton, holder.mMerchItemImageView);
+        setListener(position, holder.mGreenButton, holder.mMerchItemImageView);
+        setListener(position, holder.mGreyButton, holder.mMerchItemImageView);
+        setListener(position, holder.mRedButton, holder.mMerchItemImageView);
+        setListener(position, holder.mArrowView, holder.mMerchItemImageView);
+
+        holder.mChooseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onListFragmentInteraction("FUCK");
+            }
+        });
         //holder.mIdView.setText(mValues.get(position).id);
         //holder.mContentView.setText(mValues.get(position).content);
         //
@@ -60,34 +72,47 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
     @Override
     public int getItemCount() {
         return mValues.size();
-        //return mValues.size();
     }
 
-    private View.OnClickListener buttonListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ImageButton viewButton = (ImageButton) v;
-            switch (v.getId()) {
-                case R.id.black_button :
-                    v.setBackgroundResource(R.drawable.circle_black_tapped);
-                    break;
-                case R.id.green_button :
-                    v.setBackgroundResource(R.drawable.circle_green_tapped);
-                    break;
-                case R.id.grey_button :
-                    v.setBackgroundResource(R.drawable.circle_grey_tapped);
-                    break;
-                case R.id.red_button :
-                    v.setBackgroundResource(R.drawable.circle_red_tapped);
-                    break;
+    private void setListener(final int position, final ImageButton button, final ImageView imageView) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageButton viewButton = (ImageButton) v;
+                switch (v.getId()) {
+                    case R.id.black_button :
+                        v.setBackgroundResource(R.drawable.circle_black_tapped);
+                        imageView.setImageBitmap(mValues.get(position).getBlackList().get(0));
+                        break;
+                    case R.id.green_button :
+                        v.setBackgroundResource(R.drawable.circle_green_tapped);
+                        imageView.setImageBitmap(mValues.get(position).getGreenList().get(0));
+                        break;
+                    case R.id.grey_button :
+                        v.setBackgroundResource(R.drawable.circle_grey_tapped);
+                        imageView.setImageBitmap(mValues.get(position).getGreyList().get(0));
+                        break;
+                    case R.id.red_button :
+                        v.setBackgroundResource(R.drawable.circle_red_tapped);
+                        imageView.setImageBitmap(mValues.get(position).getRedList().get(0));
+                        break;
+                    case R.id.arrow_right_view :
+                        if (position == 0) {
+                            imageView.setImageBitmap(mValues.get(position).getBlackList().get(1));
+                        } else {
+                            imageView.setImageBitmap(mValues.get(position).getGreyList().get(1));
+                        }
+                        break;
+                }
             }
-        }
-    };
+        });
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public View mView;
         public ImageView mMerchItemImageView, mMerchItemSizeView;
-        public ImageButton mBlackButton, mGreenButton, mGreyButton, mRedButton;
+        public ImageButton mBlackButton, mGreenButton, mGreyButton, mRedButton, mArrowView, mChooseButton;
 
         public ViewHolder(View view) {
             super(view);
@@ -98,6 +123,8 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
             mGreenButton = view.findViewById(R.id.green_button);
             mGreyButton = view.findViewById(R.id.grey_button);
             mRedButton = view.findViewById(R.id.red_button);
+            mArrowView = view.findViewById(R.id.arrow_right_view);
+            mChooseButton = view.findViewById(R.id.choose_button);
         }
 
         @Override

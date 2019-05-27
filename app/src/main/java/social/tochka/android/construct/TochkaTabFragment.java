@@ -65,7 +65,6 @@ public class TochkaTabFragment extends Fragment {
                                 .position(entry.getValue().getLatLng())
                                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.tochka))
                                 .title(entry.getKey().toString()));
-
                     }
                 }
             });

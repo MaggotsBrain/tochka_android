@@ -67,10 +67,6 @@ public class MerchTabFragment extends Fragment {
                 Log.d("TAG","group :" + listDataHeader.get(groupPosition) + "  ,child : "
                         + listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition) );
 
-                // clicked on shoppers
-                // show fragment with list
-                // list contains images and something else
-
                 expandableListView.setVisibility(View.GONE);
 
                 return loadFragment(new MerchListFragment());

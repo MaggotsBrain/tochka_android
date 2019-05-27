@@ -2,38 +2,40 @@ package social.tochka.android.construct;
 
 import android.graphics.Bitmap;
 
+import java.util.List;
+
 public class MerchItem {
-    private Bitmap blackBitmap, greenBitmap, greyBitmap, redBitmap;
+    private List<Bitmap> blackList, greenList, greyList, redList;
 
-    public Bitmap getBlackBitmap() {
-        return blackBitmap;
+    public List<Bitmap> getBlackList() {
+        return blackList;
     }
 
-    public void setBlackBitmap(Bitmap blackBitmap) {
-        this.blackBitmap = blackBitmap;
+    public void setBlackList(List<Bitmap> blackList) {
+        this.blackList = blackList;
     }
 
-    public Bitmap getGreenBitmap() {
-        return greenBitmap;
+    public List<Bitmap> getGreenList() {
+        return greenList;
     }
 
-    public void setGreenBitmap(Bitmap greenBitmap) {
-        this.greenBitmap = greenBitmap;
+    public void setGreenList(List<Bitmap> greenList) {
+        this.greenList = greenList;
     }
 
-    public Bitmap getGreyBitmap() {
-        return greyBitmap;
+    public List<Bitmap> getGreyList() {
+        return greyList;
     }
 
-    public void setGreyBitmap(Bitmap greyBitmap) {
-        this.greyBitmap = greyBitmap;
+    public void setGreyList(List<Bitmap> greyList) {
+        this.greyList = greyList;
     }
 
-    public Bitmap getRedBitmap() {
-        return redBitmap;
+    public List<Bitmap> getRedList() {
+        return redList;
     }
 
-    public void setRedBitmap(Bitmap redBitmap) {
-        this.redBitmap = redBitmap;
+    public void setRedList(List<Bitmap> redList) {
+        this.redList = redList;
     }
 }

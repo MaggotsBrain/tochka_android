@@ -4,12 +4,10 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import social.tochka.android.R;
@@ -78,17 +75,41 @@ public class MerchListFragment extends Fragment {
 
             List<MerchItem> merchItemList = new ArrayList<>();
 
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.eightnoga);
+            Bitmap bitmap_black_one = BitmapFactory.decodeResource(getResources(), R.drawable.shopper_black);
+            Bitmap bitmap_black_two = BitmapFactory.decodeResource(getResources(), R.drawable.shopper_black_2);
 
-            MerchItem buffer = new MerchItem();
+            Bitmap bitmap_white_one = BitmapFactory.decodeResource(getResources(),R.drawable.shopper_white_1);
+            Bitmap bitmap_white_two = BitmapFactory.decodeResource(getResources(),R.drawable.shopper_white_2);
 
-            buffer.setBlackBitmap(bitmap);
-            buffer.setGreenBitmap(bitmap);
-            buffer.setGreyBitmap(bitmap);
-            buffer.setRedBitmap(bitmap);
+            MerchItem bufferMerchItem = new MerchItem();
 
-            merchItemList.add(buffer);
-            merchItemList.add(buffer);
+            //
+            List<Bitmap> blackListBuffer = new ArrayList<>();
+            List<Bitmap> whiteListBuffer = new ArrayList<>();
+
+            blackListBuffer.add(bitmap_black_one);
+            blackListBuffer.add(bitmap_black_two);
+
+            whiteListBuffer.add(bitmap_white_one);
+            whiteListBuffer.add(bitmap_white_two);
+
+            bufferMerchItem.setBlackList(blackListBuffer);
+            bufferMerchItem.setGreyList(whiteListBuffer);
+
+            merchItemList.add(bufferMerchItem);
+
+            //
+            List<Bitmap> blackListBuffer2 = new ArrayList<>();
+
+            blackListBuffer2.add(bitmap_black_two);
+            blackListBuffer2.add(bitmap_black_two);
+
+            MerchItem bufferMerchItem2 = new MerchItem();
+
+            bufferMerchItem2.setBlackList(blackListBuffer2);
+            bufferMerchItem2.setGreyList(whiteListBuffer);
+
+            merchItemList.add(bufferMerchItem2);
 
             recyclerView.setAdapter(new MyMerchRecyclerViewAdapter(merchItemList, mListener));
         }
