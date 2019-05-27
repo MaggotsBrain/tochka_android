@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/construct_custom"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/construct_map_blackshit"
@@ -28,5 +29,219 @@
         app:layout_constraintTop_toTopOf="@+id/construct_map_blackshit"
         app:layout_constraintVertical_bias="0.413"
         app:srcCompat="@drawable/construct_map_kapusta" />
+
+    <ImageButton
+        android:id="@+id/custom_preview_button"
+        android:layout_width="76dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="100dp"
+        android:background="@drawable/construct_custom_preview_button"
+        app:layout_constraintBottom_toBottomOf="@+id/custom_done_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/custom_done_button"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <ImageButton
+        android:id="@+id/custom_done_button"
+        android:layout_width="96dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/construct_custom_done_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/custom_preview_button"
+        app:layout_constraintTop_toBottomOf="@+id/eye9"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <ImageView
+        android:id="@+id/custom_heart"
+        android:layout_width="129dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/construc_custom_heart1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/kek_heart"
+        android:layout_width="17dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/construct_custom_kek_heart"
+        app:layout_constraintBottom_toBottomOf="@+id/kek_digit"
+        app:layout_constraintEnd_toStartOf="@+id/kek_digit"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kek_digit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/kek_digit"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/construct_custom_digit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_heart"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/kek_symbol1"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/construct_custom_twix"
+        app:layout_constraintBottom_toBottomOf="@+id/kek_symbol2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/kek_symbol2"
+        app:layout_constraintTop_toTopOf="@+id/kek_symbol2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/kek_symbol2"
+        android:layout_width="15dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="60dp"
+        android:src="@drawable/construct_custom_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/kek_digit"
+        app:layout_constraintStart_toEndOf="@+id/kek_digit"
+        app:layout_constraintTop_toTopOf="@+id/kek_digit"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/custom_done_text"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:src="@drawable/construct_custom_done_text"
+        app:layout_constraintBottom_toBottomOf="@+id/custom_done_button"
+        app:layout_constraintEnd_toEndOf="@+id/custom_done_button"
+        app:layout_constraintStart_toStartOf="@+id/custom_done_button"
+        app:layout_constraintTop_toTopOf="@+id/custom_done_button" />
+
+    <ImageButton
+        android:id="@+id/eye1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/construct_custom_eye1_1"
+        app:layout_constraintBottom_toBottomOf="@+id/eye2"
+        app:layout_constraintEnd_toStartOf="@+id/eye2"
+        app:layout_constraintTop_toTopOf="@+id/eye2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/eye2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/construct_custom_eye2_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kek_digit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/eye3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/construct_custom_eye3_1"
+        app:layout_constraintBottom_toBottomOf="@+id/eye2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/eye2"
+        app:layout_constraintTop_toTopOf="@+id/eye2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/eye4"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/construct_custom_eye4_0"
+        app:layout_constraintBottom_toBottomOf="@+id/eye5"
+        app:layout_constraintEnd_toEndOf="@+id/eye1"
+        app:layout_constraintStart_toStartOf="@+id/eye1"
+        app:layout_constraintTop_toTopOf="@+id/eye5" />
+
+    <ImageButton
+        android:id="@+id/eye5"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/construct_custom_eye5_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eye2"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <ImageButton
+        android:id="@+id/eye6"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/construct_custom_eye6_0"
+        app:layout_constraintBottom_toBottomOf="@+id/eye5"
+        app:layout_constraintEnd_toEndOf="@+id/eye3"
+        app:layout_constraintStart_toStartOf="@+id/eye3"
+        app:layout_constraintTop_toTopOf="@+id/eye5" />
+
+    <ImageButton
+        android:id="@+id/eye7"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/construct_custom_eye7_0"
+        app:layout_constraintBottom_toBottomOf="@+id/eye8"
+        app:layout_constraintEnd_toEndOf="@+id/eye4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/eye4"
+        app:layout_constraintTop_toTopOf="@+id/eye8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/eye8"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/construct_custom_eye8_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eye5"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <ImageButton
+        android:id="@+id/eye9"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/construct_custom_eye9_0"
+        app:layout_constraintBottom_toBottomOf="@+id/eye8"
+        app:layout_constraintEnd_toEndOf="@+id/eye6"
+        app:layout_constraintStart_toStartOf="@+id/eye6"
+        app:layout_constraintTop_toTopOf="@+id/eye8" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

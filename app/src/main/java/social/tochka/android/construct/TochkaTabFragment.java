@@ -1,8 +1,6 @@
 package social.tochka.android.construct;
 
 
-import android.content.Context;
-import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,7 +21,6 @@ import java.util.UUID;
 
 import social.tochka.android.R;
 import social.tochka.android.main.cards.TochkaCard;
-import social.tochka.android.main.util.CustomInfoWindowAdapter;
 import social.tochka.android.main.util.MarkerSaver;
 
 /**
