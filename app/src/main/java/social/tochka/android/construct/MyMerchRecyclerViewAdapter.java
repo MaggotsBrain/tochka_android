@@ -1,8 +1,11 @@
 package social.tochka.android.construct;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +36,12 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mMerchItemImageView.setImageBitmap(mValues.get(position).getBlackBitmap());
+
+        holder.mBlackButton.setOnClickListener(buttonListener);
+        holder.mGreenButton.setOnClickListener(buttonListener);
+        holder.mGreyButton.setOnClickListener(buttonListener);
+        holder.mRedButton.setOnClickListener(buttonListener);
+
         //holder.mIdView.setText(mValues.get(position).id);
         //holder.mContentView.setText(mValues.get(position).content);
         //
@@ -54,15 +63,41 @@ public class MyMerchRecyclerViewAdapter extends RecyclerView.Adapter<MyMerchRecy
         //return mValues.size();
     }
 
+    private View.OnClickListener buttonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ImageButton viewButton = (ImageButton) v;
+            switch (v.getId()) {
+                case R.id.black_button :
+                    v.setBackgroundResource(R.drawable.circle_black_tapped);
+                    break;
+                case R.id.green_button :
+                    v.setBackgroundResource(R.drawable.circle_green_tapped);
+                    break;
+                case R.id.grey_button :
+                    v.setBackgroundResource(R.drawable.circle_grey_tapped);
+                    break;
+                case R.id.red_button :
+                    v.setBackgroundResource(R.drawable.circle_red_tapped);
+                    break;
+            }
+        }
+    };
+
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final ImageView mMerchItemImageView, mMerchItemSizeView;
+        public View mView;
+        public ImageView mMerchItemImageView, mMerchItemSizeView;
+        public ImageButton mBlackButton, mGreenButton, mGreyButton, mRedButton;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mMerchItemImageView = view.findViewById(R.id.merch_item_image_view);
             mMerchItemSizeView = view.findViewById(R.id.merch_item_size_view);
+            mBlackButton = view.findViewById(R.id.black_button);
+            mGreenButton = view.findViewById(R.id.green_button);
+            mGreyButton = view.findViewById(R.id.grey_button);
+            mRedButton = view.findViewById(R.id.red_button);
         }
 
         @Override
