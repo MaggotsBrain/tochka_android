@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/construct_custom"
     android:layout_height="match_parent"
-    tools:context=".construct.CustomTabFragment">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/construct_map_blackshit"
+        android:layout_width="43dp"
+        android:layout_height="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414"
+        app:srcCompat="@drawable/construct_map_black" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/construct_map_kapusta"
+        android:layout_width="22dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="@+id/construct_map_blackshit"
+        app:layout_constraintEnd_toEndOf="@+id/construct_map_blackshit"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/construct_map_blackshit"
+        app:layout_constraintTop_toTopOf="@+id/construct_map_blackshit"
+        app:layout_constraintVertical_bias="0.413"
+        app:srcCompat="@drawable/construct_map_kapusta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/marker_window"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_degree_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_latitude_degree"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_degree_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_degree_digit"
+        android:layout_toEndOf="@+id/info_latitude_degree_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_degrees_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_degree_digit"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_degree_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_minute_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_degree_symbol"
+        android:layout_toEndOf="@+id/info_latitude_degree_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_latitude_minutes"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_degree_symbol"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_degree_symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_minute_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_minute_digit"
+        android:layout_toEndOf="@+id/info_latitude_minute_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_minutes_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_minute_digit"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_minute_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_seconds_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_minute_symbol"
+        android:layout_toEndOf="@+id/info_latitude_minute_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_latitude_seconds"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_minute_symbol"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_minute_symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_seconds_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_seconds_digit"
+        android:layout_toEndOf="@+id/info_latitude_seconds_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_seconds_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_seconds_digit"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_seconds_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_latitude_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_latitude_seconds_symbol"
+        android:layout_toEndOf="@+id/info_latitude_seconds_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_latitude_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/info_latitude_seconds_symbol"
+        app:layout_constraintTop_toTopOf="@+id/info_latitude_seconds_symbol" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_degree_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info_latitude_degree_digit"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_longitude_degree"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/info_latitude_degree_digit"
+        app:layout_constraintTop_toBottomOf="@+id/info_latitude_degree_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_degree_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_degree_digit"
+        android:layout_toEndOf="@+id/info_longitude_degree_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_degrees_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_degree_digit"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_degree_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_minute_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_degree_symbol"
+        android:layout_toEndOf="@+id/info_longitude_degree_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_longitude_minutes"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_degree_symbol"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_degree_symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_minute_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_minute_digit"
+        android:layout_toEndOf="@+id/info_longitude_minute_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_minutes_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_minute_digit"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_minute_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_seconds_digit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_minute_symbol"
+        android:layout_toEndOf="@+id/info_longitude_minute_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_longitude_seconds"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_minute_symbol"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_minute_symbol" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_seconds_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_seconds_digit"
+        android:layout_toEndOf="@+id/info_longitude_seconds_digit"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_seconds_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_seconds_digit"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_seconds_digit" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_longitude_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/info_longitude_seconds_symbol"
+        android:layout_toEndOf="@+id/info_longitude_seconds_symbol"
+        android:background="@color/colorProfileWhiteBack"
+        android:fontFamily="@font/raleway_bold"
+        android:text="@string/card_longitude_symbol"
+        android:textColor="@color/marker_coordinates"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/info_longitude_seconds_symbol"
+        app:layout_constraintStart_toEndOf="@+id/info_longitude_seconds_symbol" />
+
+    <ImageButton
+        android:id="@+id/info_cancel"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/marker_close_button"
+        android:onClick="onClickAddCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/info_story"
+        app:layout_constraintStart_toStartOf="@+id/info_story"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/info_approve_background"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/info_cancel"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/info_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/info_cancel"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/info_favorites"
+        android:layout_width="19dp"
+        android:layout_height="17dp"
+        android:background="@drawable/construct_map_approve"
+        android:onClick="onClickAddLock"
+        app:layout_constraintBottom_toBottomOf="@+id/info_approve_background"
+        app:layout_constraintEnd_toEndOf="@+id/info_approve_background"
+        app:layout_constraintStart_toStartOf="@+id/info_approve_background"
+        app:layout_constraintTop_toTopOf="@+id/info_approve_background" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_username"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/raleway_bold"
+        android:textColor="@color/marker_username"
+        app:layout_constraintBottom_toTopOf="@+id/info_story"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_longitude_degree_digit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/info_story"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/transparency"
+        android:fontFamily="@font/comfortaa"
+        android:textColor="@color/marker_story"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_longitude_symbol"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

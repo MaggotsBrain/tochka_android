@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/construct_map_list" />
 
     <ImageView
-        android:id="@+id/construc_map_blackshit"
+        android:id="@+id/construct_map_blackshit"
         android:layout_width="43dp"
         android:layout_height="116dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,11 +52,11 @@
         android:id="@+id/construct_map_kapusta"
         android:layout_width="22dp"
         android:layout_height="59dp"
-        app:layout_constraintBottom_toBottomOf="@+id/construc_map_blackshit"
-        app:layout_constraintEnd_toEndOf="@+id/construc_map_blackshit"
+        app:layout_constraintBottom_toBottomOf="@+id/construct_map_blackshit"
+        app:layout_constraintEnd_toEndOf="@+id/construct_map_blackshit"
         app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="@+id/construc_map_blackshit"
-        app:layout_constraintTop_toTopOf="@+id/construc_map_blackshit"
+        app:layout_constraintStart_toStartOf="@+id/construct_map_blackshit"
+        app:layout_constraintTop_toTopOf="@+id/construct_map_blackshit"
         app:layout_constraintVertical_bias="0.413"
         app:srcCompat="@drawable/construct_map_kapusta" />
 

@@ -57,7 +57,7 @@ public class TochkaTabFragment extends Fragment {
                     googleMap.setMapStyle(
                             MapStyleOptions.loadRawResourceStyle(getContext(), R.raw.map_style));
                     mMap = googleMap;
-                    mMap.setInfoWindowAdapter(new CustomInfoWindowAdapter(getContext()));
+                    mMap.setInfoWindowAdapter(new CustomCunstructInfoWindowAdapter(getContext()));
                     mMap.getUiSettings().setMapToolbarEnabled(false);
 
                     for (Map.Entry<UUID, TochkaCard> entry : MarkerSaver.tochkaMap.entrySet()) {
