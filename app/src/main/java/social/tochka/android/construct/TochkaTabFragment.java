@@ -1,6 +1,7 @@
 package social.tochka.android.construct;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,6 +28,9 @@ import social.tochka.android.main.util.MarkerSaver;
  * A simple {@link Fragment} subclass.
  */
 public class TochkaTabFragment extends Fragment {
+
+    private anotherOnListInteractionListener mListener;
+
 
     private GoogleMap mMap;
 
@@ -68,4 +72,37 @@ public class TochkaTabFragment extends Fragment {
         }
         return view;
     }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof anotherOnListInteractionListener) {
+            mListener = (anotherOnListInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnListFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p/>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface anotherOnListInteractionListener {
+        // TODO: Update argument type and name
+        void anotherOnListFragmentInteraction(String item);
+    }
+
 }

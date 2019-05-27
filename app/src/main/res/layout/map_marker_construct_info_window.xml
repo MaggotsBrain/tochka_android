@@ -5,7 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/marker_window"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="social.tochka.android.construct.ConstructActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/info_latitude_degree_digit"
@@ -213,7 +214,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/marker_close_button"
-        android:onClick="onClickAddCancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/info_story"
         app:layout_constraintStart_toStartOf="@+id/info_story"
@@ -234,11 +234,10 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/info_favorites"
+        android:id="@+id/info_approve"
         android:layout_width="19dp"
         android:layout_height="17dp"
         android:background="@drawable/construct_map_approve"
-        android:onClick="onClickAddLock"
         app:layout_constraintBottom_toBottomOf="@+id/info_approve_background"
         app:layout_constraintEnd_toEndOf="@+id/info_approve_background"
         app:layout_constraintStart_toStartOf="@+id/info_approve_background"
