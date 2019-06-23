@@ -8,6 +8,9 @@ public class CoordinatesConverter {
 
     public static Map<String, String> toMap(String latitude, String longitude) {
 
+        latitude = latitude.replace(".", ",");
+        longitude = longitude.replace(".", ",");
+
         Map<String, String> coordinates = new HashMap<>();
 
         String[] lats = latitude.split(":");

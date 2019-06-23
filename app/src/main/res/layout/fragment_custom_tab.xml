@@ -34,12 +34,13 @@
         android:id="@+id/custom_preview_button"
         android:layout_width="76dp"
         android:layout_height="14dp"
-        android:layout_marginStart="100dp"
         android:background="@drawable/construct_custom_preview_button"
         app:layout_constraintBottom_toBottomOf="@+id/custom_done_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/custom_done_button"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintVertical_bias="0.428" />
 
     <ImageButton
         android:id="@+id/custom_done_button"
@@ -52,10 +53,10 @@
         android:background="@drawable/construct_custom_done_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/custom_preview_button"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eye9"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.481" />
 
     <ImageView
         android:id="@+id/custom_heart"
@@ -92,7 +93,7 @@
         android:layout_width="36dp"
         android:layout_height="18dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/construct_custom_digit"
@@ -138,8 +139,8 @@
 
     <ImageButton
         android:id="@+id/eye1"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginEnd="12dp"
         android:background="@drawable/construct_custom_eye1_1"
         app:layout_constraintBottom_toBottomOf="@+id/eye2"
@@ -149,8 +150,8 @@
 
     <ImageButton
         android:id="@+id/eye2"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/construct_custom_eye2_0"
@@ -162,8 +163,8 @@
 
     <ImageButton
         android:id="@+id/eye3"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/construct_custom_eye3_1"
         app:layout_constraintBottom_toBottomOf="@+id/eye2"
@@ -175,8 +176,8 @@
 
     <ImageButton
         android:id="@+id/eye4"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/construct_custom_eye4_0"
         app:layout_constraintBottom_toBottomOf="@+id/eye5"
         app:layout_constraintEnd_toEndOf="@+id/eye1"
@@ -185,8 +186,8 @@
 
     <ImageButton
         android:id="@+id/eye5"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -200,8 +201,8 @@
 
     <ImageButton
         android:id="@+id/eye6"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/construct_custom_eye6_0"
         app:layout_constraintBottom_toBottomOf="@+id/eye5"
         app:layout_constraintEnd_toEndOf="@+id/eye3"
@@ -210,8 +211,8 @@
 
     <ImageButton
         android:id="@+id/eye7"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/construct_custom_eye7_0"
         app:layout_constraintBottom_toBottomOf="@+id/eye8"
@@ -223,8 +224,8 @@
 
     <ImageButton
         android:id="@+id/eye8"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/construct_custom_eye8_1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -235,8 +236,8 @@
 
     <ImageButton
         android:id="@+id/eye9"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:background="@drawable/construct_custom_eye9_0"
         app:layout_constraintBottom_toBottomOf="@+id/eye8"
         app:layout_constraintEnd_toEndOf="@+id/eye6"
